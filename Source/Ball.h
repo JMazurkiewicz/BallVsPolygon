@@ -13,6 +13,6 @@ public:
 
 private:
 
-
 	Velocity velocity;
+
 };

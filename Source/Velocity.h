@@ -14,7 +14,7 @@ public:
 
 private:
 
-	sf::Vector2f Velocity::computateDistanceVector();
+	sf::Vector2f computateDistanceVector();
 
 	Stopwatch stopwatch;
 

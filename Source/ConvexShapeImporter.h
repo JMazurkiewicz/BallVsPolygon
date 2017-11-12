@@ -2,8 +2,6 @@
 
 #include <istream>
 #include <SFML/Graphics.hpp>
-#include <string>
-#include <vector>
 
 class ConvexShapeImporter {
 
