@@ -118,6 +118,7 @@
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h" />
     <ClInclude Include="Source\Objects\Ball.h" />
     <ClInclude Include="Source\Objects\Polygon.h" />
+    <ClInclude Include="Source\Physics\BallBouncer.h" />
     <ClInclude Include="Source\Physics\Stopwatch.h" />
     <ClInclude Include="Source\Physics\StraightLine.h" />
     <ClInclude Include="Source\Physics\Velocity.h" />
@@ -128,7 +129,9 @@
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp" />
     <ClCompile Include="Source\Objects\Ball.cpp" />
     <ClCompile Include="Source\Objects\Polygon.cpp" />
+    <ClCompile Include="Source\Physics\BallBouncer.cpp" />
     <ClCompile Include="Source\Physics\Stopwatch.cpp" />
+    <ClCompile Include="Source\Physics\StraightLine.cpp" />
     <ClCompile Include="Source\Physics\Velocity.cpp" />
   </ItemGroup>
   <ItemGroup>

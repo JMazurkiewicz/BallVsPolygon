@@ -37,6 +37,9 @@
     <ClInclude Include="Source\Objects\Polygon.h">
       <Filter>Sources\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Physics\BallBouncer.h">
+      <Filter>Sources\Physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BallVsPolygon.cpp">
@@ -59,6 +62,12 @@
     </ClCompile>
     <ClCompile Include="Source\Objects\Polygon.cpp">
       <Filter>Sources\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\StraightLine.cpp">
+      <Filter>Sources\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\BallBouncer.cpp">
+      <Filter>Sources\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

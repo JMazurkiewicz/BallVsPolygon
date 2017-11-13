@@ -9,6 +9,7 @@ public:
 
 	Ball();
 
+	void setVelocity(const Velocity& velocity);
 	void update();
 
 private:
