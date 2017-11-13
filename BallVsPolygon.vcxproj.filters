@@ -25,14 +25,17 @@
     <ClInclude Include="Source\Objects\Ball.h">
       <Filter>Sources\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Physhics\Velocity.h">
+    <ClInclude Include="Source\Physics\Stopwatch.h">
       <Filter>Sources\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Physhics\Stopwatch.h">
+    <ClInclude Include="Source\Physics\StraightLine.h">
       <Filter>Sources\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Physhics\StraightLine.h">
+    <ClInclude Include="Source\Physics\Velocity.h">
       <Filter>Sources\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Objects\Polygon.h">
+      <Filter>Sources\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -48,11 +51,14 @@
     <ClCompile Include="Source\Objects\Ball.cpp">
       <Filter>Sources\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Physhics\Stopwatch.cpp">
+    <ClCompile Include="Source\Physics\Stopwatch.cpp">
       <Filter>Sources\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Physhics\Velocity.cpp">
+    <ClCompile Include="Source\Physics\Velocity.cpp">
       <Filter>Sources\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Objects\Polygon.cpp">
+      <Filter>Sources\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

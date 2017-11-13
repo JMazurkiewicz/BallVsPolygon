@@ -117,17 +117,19 @@
     <ClInclude Include="Source\ConvexShape\ConvexShapeImporter.h" />
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h" />
     <ClInclude Include="Source\Objects\Ball.h" />
-    <ClInclude Include="Source\Physhics\Stopwatch.h" />
-    <ClInclude Include="Source\Physhics\StraightLine.h" />
-    <ClInclude Include="Source\Physhics\Velocity.h" />
+    <ClInclude Include="Source\Objects\Polygon.h" />
+    <ClInclude Include="Source\Physics\Stopwatch.h" />
+    <ClInclude Include="Source\Physics\StraightLine.h" />
+    <ClInclude Include="Source\Physics\Velocity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BallVsPolygon.cpp" />
     <ClCompile Include="Source\ConvexShape\ConvexShapeImporter.cpp" />
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp" />
     <ClCompile Include="Source\Objects\Ball.cpp" />
-    <ClCompile Include="Source\Physhics\Stopwatch.cpp" />
-    <ClCompile Include="Source\Physhics\Velocity.cpp" />
+    <ClCompile Include="Source\Objects\Polygon.cpp" />
+    <ClCompile Include="Source\Physics\Stopwatch.cpp" />
+    <ClCompile Include="Source\Physics\Velocity.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,23 +1,12 @@
-#include "Ball.h"
-#include "ConvexShapeImporter.h"
-#include <fstream>
+#include "Objects/Ball.h"
+#include "Objects/Polygon.h"
 #include <SFML/Graphics.hpp>
-#include <fstream>
-
-// Zrobiæ klasê Polygon dziedzicz¹c¹ po sf::ConvexShape
-// Uporz¹dkowaæ klasê BallVsPolygon (g³ówn¹)
-// Upodz¹dkowaæ strukturê folderów
 
 class BallVsPolygon {
 
 public:
 
-	BallVsPolygon() : window(sf::VideoMode(1200, 600), "Title", sf::Style::Titlebar) {
-		
-		preparePolygon();
-		prepareBall();
-
-	}
+	BallVsPolygon() : window(sf::VideoMode(1200, 600), "Title", sf::Style::Titlebar) { }
 
 	void run() {
 
@@ -33,26 +22,6 @@ public:
 
 private:
 
-	void preparePolygon() {
-
-		loadPolygonFromFile();
-		
-		polygon.setFillColor(sf::Color::Black);
-
-		polygon.setOutlineColor(sf::Color::White);
-		polygon.setOutlineThickness(1);
-
-	}
-
-	void loadPolygonFromFile() {
-
-		std::ifstream file("points.txt");
-		file >> polygon;
-
-	}
-
-	void prepareBall() { }
-
 	void closeIfSpaceIsPressed() {
 
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
@@ -63,7 +32,7 @@ private:
 
 	void updateObjects() {
 
-		ball.move();
+		ball.update();
 
 	}
 
@@ -80,7 +49,7 @@ private:
 
 
 	Ball ball;
-	sf::ConvexShape polygon;
+	Polygon polygon;
 	sf::RenderWindow window;
 
 };

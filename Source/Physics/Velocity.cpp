@@ -1,13 +1,9 @@
-﻿#include "Velocity.h"
+﻿#include "Physics/Velocity.h"
 
 void Velocity::restart() {
 	stopwatch.restart();
 }
 
-void Velocity::moveObject(sf::Transformable& object) {
-	object.move(computateDistanceVector());
-}
-
-sf::Vector2f Velocity::computateDistanceVector() {
-	return (*this) * stopwatch.getEllapsedTime(); // s=vΔt
+sf::Vector2f Velocity::getDistanceVector() {
+	return (*this) * stopwatch.getEllapsedTime(); // s=v*Δt
 }

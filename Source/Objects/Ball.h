@@ -9,7 +9,7 @@ public:
 
 	Ball();
 
-	void move();
+	void update();
 
 private:
 

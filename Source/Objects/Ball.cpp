@@ -1,4 +1,4 @@
-#include "Ball.h"
+#include "Objects/Ball.h"
 
 Ball::Ball() : velocity(50, 50) {
 
@@ -7,8 +7,8 @@ Ball::Ball() : velocity(50, 50) {
 
 }
 
-void Ball::move() {
+void Ball::update() {
 
-	velocity.moveObject(*this);
+	move(velocity.getDistanceVector());
 
 }
