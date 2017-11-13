@@ -5,45 +5,54 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Sources\Physics">
+      <UniqueIdentifier>{d19836cc-d8cd-4ac8-871e-9943d8f790c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Objects">
+      <UniqueIdentifier>{269eeff5-ae0f-4ab3-beaf-bacad0ce08a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\ConvexShape">
+      <UniqueIdentifier>{0a5450c2-2e62-4388-a06f-771c48202f22}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Ball.h">
-      <Filter>Sources</Filter>
+    <ClInclude Include="Source\ConvexShape\ConvexShapeImporter.h">
+      <Filter>Sources\ConvexShape</Filter>
     </ClInclude>
-    <ClInclude Include="Source\StraightLine.h">
-      <Filter>Sources</Filter>
+    <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h">
+      <Filter>Sources\ConvexShape</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Velocity.h">
-      <Filter>Sources</Filter>
+    <ClInclude Include="Source\Objects\Ball.h">
+      <Filter>Sources\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ConvexShapeImporter.h">
-      <Filter>Sources</Filter>
+    <ClInclude Include="Source\Physhics\Velocity.h">
+      <Filter>Sources\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ConvexShapeMaker.h">
-      <Filter>Sources</Filter>
+    <ClInclude Include="Source\Physhics\Stopwatch.h">
+      <Filter>Sources\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Stopwatch.h">
-      <Filter>Sources</Filter>
+    <ClInclude Include="Source\Physhics\StraightLine.h">
+      <Filter>Sources\Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BallVsPolygon.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ConvexShapeImporter.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Source\ConvexShape\ConvexShapeImporter.cpp">
+      <Filter>Sources\ConvexShape</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ConvexShapeMaker.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp">
+      <Filter>Sources\ConvexShape</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Velocity.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Source\Objects\Ball.cpp">
+      <Filter>Sources\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Stopwatch.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Source\Physhics\Stopwatch.cpp">
+      <Filter>Sources\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Ball.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Source\Physhics\Velocity.cpp">
+      <Filter>Sources\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

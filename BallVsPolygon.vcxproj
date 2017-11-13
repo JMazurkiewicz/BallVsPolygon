@@ -74,6 +74,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Jakub\Documents\BallVsPolygon\BallVsPolygon\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -81,6 +82,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Jakub\Documents\BallVsPolygon\BallVsPolygon\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -90,6 +92,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Jakub\Documents\BallVsPolygon\BallVsPolygon\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -103,6 +106,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Jakub\Documents\BallVsPolygon\BallVsPolygon\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -110,20 +114,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Ball.h" />
-    <ClInclude Include="Source\ConvexShapeImporter.h" />
-    <ClInclude Include="Source\ConvexShapeMaker.h" />
-    <ClInclude Include="Source\Stopwatch.h" />
-    <ClInclude Include="Source\StraightLine.h" />
-    <ClInclude Include="Source\Velocity.h" />
+    <ClInclude Include="Source\ConvexShape\ConvexShapeImporter.h" />
+    <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h" />
+    <ClInclude Include="Source\Objects\Ball.h" />
+    <ClInclude Include="Source\Physhics\Stopwatch.h" />
+    <ClInclude Include="Source\Physhics\StraightLine.h" />
+    <ClInclude Include="Source\Physhics\Velocity.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Ball.cpp" />
     <ClCompile Include="Source\BallVsPolygon.cpp" />
-    <ClCompile Include="Source\ConvexShapeImporter.cpp" />
-    <ClCompile Include="Source\ConvexShapeMaker.cpp" />
-    <ClCompile Include="Source\Stopwatch.cpp" />
-    <ClCompile Include="Source\Velocity.cpp" />
+    <ClCompile Include="Source\ConvexShape\ConvexShapeImporter.cpp" />
+    <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp" />
+    <ClCompile Include="Source\Objects\Ball.cpp" />
+    <ClCompile Include="Source\Physhics\Stopwatch.cpp" />
+    <ClCompile Include="Source\Physhics\Velocity.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

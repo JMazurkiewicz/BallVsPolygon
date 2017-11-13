@@ -1,4 +1,4 @@
-#include "ConvexShapeMaker.h"
+#include "ConvexShape/ConvexShapeMaker.h"
 #include <stdexcept>
 
 ConvexShapeMaker::ConvexShapeMaker(const std::vector<sf::Vector2f>& points) 
