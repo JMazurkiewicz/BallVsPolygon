@@ -2,11 +2,17 @@
 #include "Objects/Polygon.h"
 #include <SFML/Graphics.hpp>
 
+// Przed nowymi dodatkami nale¿y dokonaæ refaktoryzacji kodu.
+//
+// Do implementacji:
+// 1) Pauza za pomoc¹ spacji,
+// 2) Mo¿liwoœæ ustawienia pi³ki w losowym miejscu z losowym wektorem prêdkoœci.
+
 class BallVsPolygon {
 
 public:
 
-	BallVsPolygon() : window(sf::VideoMode(1200, 600), "Title", sf::Style::Titlebar) { }
+	BallVsPolygon() : window(sf::VideoMode(1200, 600), "BallVsPolygon") { }
 
 	void run() {
 
@@ -33,6 +39,7 @@ private:
 	void updateObjects() {
 
 		ball.update();
+		ball.bounceOnCollisionWith(polygon);
 
 	}
 

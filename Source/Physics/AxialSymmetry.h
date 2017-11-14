@@ -13,6 +13,8 @@ public:
 
 private:
 
-	const StraightLine& axis;
+	void prepareAxis();
+
+	StraightLine axis;
 
 };
