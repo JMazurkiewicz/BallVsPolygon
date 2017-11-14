@@ -1,10 +1,11 @@
 #include "ConvexShape/ConvexShapeMaker.h"
+#include <cstddef>
 #include <stdexcept>
 
-ConvexShapeMaker::ConvexShapeMaker(const std::vector<sf::Vector2f>& points) 
+ConvexShapeMaker::ConvexShapeMaker(const std::vector<sf::Vector2f>& points)
 	: points(points) {
 
-	checkPoints();
+	checkPointsCount();
 
 }
 
@@ -20,10 +21,10 @@ sf::ConvexShape ConvexShapeMaker::makeConvexShape() {
 
 }
 
-void ConvexShapeMaker::checkPoints() {
+void ConvexShapeMaker::checkPointsCount() {
 
 	if(points.size() < 3) {
-		throw std::runtime_error("too little points were given");
+		throw std::logic_error("too little points were given");
 	}
 
 }

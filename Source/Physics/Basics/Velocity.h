@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "Physics/Basics/Stopwatch.h"
+#include "Physics/Basics/Timer.h"
 
 class Velocity : public sf::Vector2f {
 
@@ -14,6 +14,6 @@ public:
 
 private:
 
-	Stopwatch stopwatch;
+	Timer stopwatch;
 
 };

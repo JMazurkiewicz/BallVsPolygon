@@ -35,12 +35,12 @@ void Ball::bounceOnCollisionWith(const Polygon& polygon) {
 
 	const size_t pointCount = polygon.getPointCount();
 
-	StraightLine lastSide(polygon.getPoint(0), polygon.getPoint(pointCount-1));
+	Line lastSide(polygon.getPoint(0), polygon.getPoint(pointCount-1));
 	BallBouncer(lastSide, *this).bounceOnCollisionFrom();
 
 	for(std::size_t i = 1; i < pointCount; ++i) {
 
-		StraightLine line(polygon.getPoint(i-1), polygon.getPoint(i));
+		Line line(polygon.getPoint(i-1), polygon.getPoint(i));
 		
 		std::cout << "line: " << line.a << "x + (" << line.b << ")y + (" << line.c << ") = 0\n";
 

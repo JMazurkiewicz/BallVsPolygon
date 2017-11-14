@@ -1,10 +1,10 @@
-#include "ConvexShape/ConvexShapeImporter.h"
 #include <fstream>
+#include "IO/ConvexShapeImporter.h"
 #include "Objects/Polygon.h"
 
 Polygon::Polygon() {
 
-	loadFromFile();
+	loadPointsFromFile();
 
 	setFillColor(sf::Color::Black);
 
@@ -13,7 +13,7 @@ Polygon::Polygon() {
 
 }
 
-void Polygon::loadFromFile() {
+void Polygon::loadPointsFromFile() {
 	std::ifstream file("points.txt");
 	file >> *this;
 }

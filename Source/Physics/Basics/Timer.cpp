@@ -1,14 +1,14 @@
-#include "Physics/Basics/Stopwatch.h"
+#include "Physics/Basics/Timer.h"
 
-Stopwatch::Stopwatch() {
+Timer::Timer() {
 	restart();
 }
 
-void Stopwatch::restart() {
+void Timer::restart() {
 	lastStop = Clock::now();
 }
 
-float Stopwatch::getEllapsedTime() {
+float Timer::getEllapsedTime() {
 
 	Clock::time_point newStop = Clock::now();
 

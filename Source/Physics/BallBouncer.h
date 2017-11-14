@@ -1,13 +1,13 @@
 #pragma once
 
 #include "Objects/Ball.h"
-#include "Physics/Basics/StraightLine.h"
+#include "Physics/Basics/Line.h"
 
 class BallBouncer {
 
 public:
 
-	BallBouncer(const StraightLine& line, Ball& ball);
+	BallBouncer(const Line& line, Ball& ball);
 
 	void bounceOnCollisionFrom();
 
@@ -15,7 +15,7 @@ private:
 
 	bool didCollisionHappen() const;
 
-	const StraightLine& line;
+	const Line& line;
 	Ball& ball;
 
 };

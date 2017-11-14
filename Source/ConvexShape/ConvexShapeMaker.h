@@ -12,7 +12,7 @@ public:
 
 private:
 
-	void checkPoints();
+	void checkPointsCount();
 
 	const std::vector<sf::Vector2f>& points;
 

@@ -1,7 +1,7 @@
 #include "Physics/AxialSymmetry.h"
 #include "Physics/BallBouncer.h"
 
-BallBouncer::BallBouncer(const StraightLine& line, Ball& ball) : line(line), ball(ball) { }
+BallBouncer::BallBouncer(const Line& line, Ball& ball) : line(line), ball(ball) { }
 
 void BallBouncer::bounceOnCollisionFrom() {
 

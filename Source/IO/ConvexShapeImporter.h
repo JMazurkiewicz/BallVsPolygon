@@ -12,9 +12,6 @@ public:
 
 private:
 
-	sf::Vector2f importOnePoint();
-	void checkSeparator(char separator);
-
 	std::istream& stream;
 
 };

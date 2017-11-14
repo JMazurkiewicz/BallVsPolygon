@@ -2,13 +2,13 @@
 
 #include <chrono>
 
-class Stopwatch {
+class Timer {
 
 public:
 	
 	using Clock = std::chrono::high_resolution_clock;
 
-	Stopwatch();
+	Timer();
 
 	void restart();
 	float getEllapsedTime();

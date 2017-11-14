@@ -114,26 +114,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\ConvexShape\ConvexShapeImporter.h" />
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h" />
+    <ClInclude Include="Source\IO\ConvexShapeImporter.h" />
+    <ClInclude Include="Source\IO\VectorImporter.h" />
     <ClInclude Include="Source\Objects\Ball.h" />
     <ClInclude Include="Source\Objects\Polygon.h" />
     <ClInclude Include="Source\Physics\AxialSymmetry.h" />
     <ClInclude Include="Source\Physics\BallBouncer.h" />
-    <ClInclude Include="Source\Physics\Basics\Stopwatch.h" />
-    <ClInclude Include="Source\Physics\Basics\StraightLine.h" />
+    <ClInclude Include="Source\Physics\Basics\Timer.h" />
+    <ClInclude Include="Source\Physics\Basics\Line.h" />
     <ClInclude Include="Source\Physics\Basics\Velocity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BallVsPolygon.cpp" />
-    <ClCompile Include="Source\ConvexShape\ConvexShapeImporter.cpp" />
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp" />
+    <ClCompile Include="Source\IO\ConvexShapeImporter.cpp" />
+    <ClCompile Include="Source\IO\VectorImporter.cpp" />
     <ClCompile Include="Source\Objects\Ball.cpp" />
     <ClCompile Include="Source\Objects\Polygon.cpp" />
     <ClCompile Include="Source\Physics\AxialSymmetry.cpp" />
     <ClCompile Include="Source\Physics\BallBouncer.cpp" />
-    <ClCompile Include="Source\Physics\Basics\Stopwatch.cpp" />
-    <ClCompile Include="Source\Physics\Basics\StraightLine.cpp" />
+    <ClCompile Include="Source\Physics\Basics\Timer.cpp" />
+    <ClCompile Include="Source\Physics\Basics\Line.cpp" />
     <ClCompile Include="Source\Physics\Basics\Velocity.cpp" />
   </ItemGroup>
   <ItemGroup>
