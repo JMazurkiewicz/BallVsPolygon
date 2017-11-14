@@ -9,7 +9,7 @@ sf::Vector2f AxialSymmetry::getSymmetricalVector(const sf::Vector2f& vector) {
 	const Line perpendicularLine = axis.getPerpendicularLinePassingThroughPoint(vector);
 	sf::Vector2f commonPoint = axis.getCommonPoint(perpendicularLine);
 
-	return sf::Vector2f(2*commonPoint.x - vector.x, 2*commonPoint.y - vector.y);
+	return 2.0f * commonPoint - vector;
 
 }
 

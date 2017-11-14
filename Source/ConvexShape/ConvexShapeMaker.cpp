@@ -5,7 +5,7 @@
 ConvexShapeMaker::ConvexShapeMaker(const std::vector<sf::Vector2f>& points)
 	: points(points) {
 
-	checkPointsCount();
+	throwIfPointCountIsTooSmall();
 
 }
 
@@ -21,7 +21,7 @@ sf::ConvexShape ConvexShapeMaker::makeConvexShape() {
 
 }
 
-void ConvexShapeMaker::checkPointsCount() {
+void ConvexShapeMaker::throwIfPointCountIsTooSmall() {
 
 	if(points.size() < 3) {
 		throw std::logic_error("too little points were given");

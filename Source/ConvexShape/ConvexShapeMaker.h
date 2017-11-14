@@ -12,7 +12,7 @@ public:
 
 private:
 
-	void checkPointsCount();
+	void throwIfPointCountIsTooSmall();
 
 	const std::vector<sf::Vector2f>& points;
 

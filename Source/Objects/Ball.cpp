@@ -29,8 +29,6 @@ void Ball::update() {
 	move(velocity.getDistanceVector());
 }
 
-#include <iostream>
-
 void Ball::bounceOnCollisionWith(const Polygon& polygon) {
 
 	const size_t pointCount = polygon.getPointCount();
@@ -41,8 +39,6 @@ void Ball::bounceOnCollisionWith(const Polygon& polygon) {
 	for(std::size_t i = 1; i < pointCount; ++i) {
 
 		Line line(polygon.getPoint(i-1), polygon.getPoint(i));
-		
-		std::cout << "line: " << line.a << "x + (" << line.b << ")y + (" << line.c << ") = 0\n";
 
 		BallBouncer bouncer(line, *this);
 		bouncer.bounceOnCollisionFrom();

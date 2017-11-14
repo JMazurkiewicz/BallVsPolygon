@@ -16,8 +16,6 @@ void BallBouncer::bounceOnCollisionFrom() {
 
 }
 
-#include <iostream>
-
 bool BallBouncer::didCollisionHappen() const {
 	return line.distanceFromPoint(ball.getPosition()) <= ball.getRadius();
 }

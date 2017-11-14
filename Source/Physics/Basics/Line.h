@@ -14,6 +14,7 @@ public:
 	bool isParallelTo(const Line& other) const;
 
 	float distanceFromPoint(const sf::Vector2f& point) const;
+
 	sf::Vector2f getCommonPoint(const Line& other) const;
 	Line getPerpendicularLinePassingThroughPoint(const sf::Vector2f& point) const;
 

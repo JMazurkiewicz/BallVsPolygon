@@ -2,7 +2,10 @@
 #include "Objects/Polygon.h"
 #include <SFML/Graphics.hpp>
 
-// Przed nowymi dodatkami nale¿y dokonaæ refaktoryzacji kodu.
+// Do refaktoryzacji:
+// 1) Klasa 'Ball', 'BallBouncer'
+// 2) Zmiana systemu liczenia czasu, a co za tym idzie prêdkoœci (czas bêdzie zewnêtrzny, wspólny dla wszystkich)
+// 3) Naprawa b³êdów w odbijaniu pi³ki
 //
 // Do implementacji:
 // 1) Pauza za pomoc¹ spacji,

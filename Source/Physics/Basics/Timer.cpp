@@ -10,12 +10,12 @@ void Timer::restart() {
 
 float Timer::getEllapsedTime() {
 
-	Clock::time_point newStop = Clock::now();
+	Clock::time_point nextStop = Clock::now();
 
 	using namespace std::chrono;
-	auto ellapsedTime = duration_cast<duration<float>>(newStop-lastStop);
+	duration<float> ellapsedTime = duration_cast<duration<float>>(nextStop-lastStop);
 
-	lastStop = newStop;
+	lastStop = nextStop;
 	return ellapsedTime.count();
 
 }
