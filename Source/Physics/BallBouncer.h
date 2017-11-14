@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Objects/Ball.h"
-#include "Physics/StraightLine.h"
+#include "Physics/Basics/StraightLine.h"
 
 class BallBouncer {
 

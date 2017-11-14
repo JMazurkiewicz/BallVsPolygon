@@ -14,6 +14,9 @@
     <Filter Include="Sources\ConvexShape">
       <UniqueIdentifier>{0a5450c2-2e62-4388-a06f-771c48202f22}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Physics\Basics">
+      <UniqueIdentifier>{4611482c-2c44-4575-aec8-c3db0d254651}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ConvexShape\ConvexShapeImporter.h">
@@ -25,20 +28,23 @@
     <ClInclude Include="Source\Objects\Ball.h">
       <Filter>Sources\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Physics\Stopwatch.h">
-      <Filter>Sources\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Physics\StraightLine.h">
-      <Filter>Sources\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Physics\Velocity.h">
-      <Filter>Sources\Physics</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Objects\Polygon.h">
       <Filter>Sources\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Source\Physics\BallBouncer.h">
       <Filter>Sources\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\AxialSymmetry.h">
+      <Filter>Sources\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Basics\Stopwatch.h">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Basics\StraightLine.h">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Basics\Velocity.h">
+      <Filter>Sources\Physics\Basics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -54,20 +60,23 @@
     <ClCompile Include="Source\Objects\Ball.cpp">
       <Filter>Sources\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Physics\Stopwatch.cpp">
-      <Filter>Sources\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\Velocity.cpp">
-      <Filter>Sources\Physics</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Objects\Polygon.cpp">
       <Filter>Sources\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Physics\StraightLine.cpp">
-      <Filter>Sources\Physics</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Physics\BallBouncer.cpp">
       <Filter>Sources\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\AxialSymmetry.cpp">
+      <Filter>Sources\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Basics\Stopwatch.cpp">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Basics\StraightLine.cpp">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Basics\Velocity.cpp">
+      <Filter>Sources\Physics\Basics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

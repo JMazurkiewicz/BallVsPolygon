@@ -13,12 +13,17 @@ Ball::Ball() : velocity(50, 50) {
 
 }
 
-void Ball::update() {
-
-	move(velocity.getDistanceVector());
-
+const Velocity & Ball::getVelocity() const {
+	return velocity;
 }
 
 void Ball::setVelocity(const Velocity& velocity) {
 	this->velocity = velocity;
+}
+
+
+void Ball::update() {
+
+	move(velocity.getDistanceVector());
+
 }

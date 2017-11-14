@@ -1,5 +1,5 @@
 ﻿#include <cmath>
-#include "Physics/Velocity.h"
+#include "Physics/Basics/Velocity.h"
 
 void Velocity::restart() {
 	stopwatch.restart();

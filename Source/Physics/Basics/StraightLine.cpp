@@ -1,5 +1,5 @@
 #include <cmath>
-#include "Physics/StraightLine.h"
+#include "Physics/Basics/StraightLine.h"
 
 StraightLine::StraightLine(const sf::Vector2f& pointA, const sf::Vector2f& pointB) :
 	a{-(pointB.y - pointA.y)},
