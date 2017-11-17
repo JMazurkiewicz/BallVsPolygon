@@ -1,10 +1,8 @@
 ﻿#include <cmath>
 #include "Physics/Basics/Velocity.h"
 
-void Velocity::restart() {
-	stopwatch.restart();
-}
+sf::Vector2f Velocity::getDistanceVector(float time) {
 
-sf::Vector2f Velocity::getDistanceVector() {
-	return (*this) * stopwatch.getEllapsedTime(); // s=v*Δt
+	return (*this) * time; // s=v*Δt
+
 }

@@ -7,15 +7,12 @@ class BallBouncer {
 
 public:
 
-	BallBouncer(const Line& line, Ball& ball);
+	BallBouncer(Ball& ball);
 
-	void bounceOnCollisionFrom();
+	void bounceFrom(const Line& line);
 
 private:
 
-	bool didCollisionHappen() const;
-
-	const Line& line;
 	Ball& ball;
 
 };

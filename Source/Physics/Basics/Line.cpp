@@ -58,7 +58,9 @@ Line Line::getPerpendicularLinePassingThroughPoint(const sf::Vector2f& point) co
 }
 
 void Line::throwIfHasNoCommonPoint(const Line& other) const {
+
 	if(isParallelTo(other)) {
 		throw std::logic_error("lines don't intersect");
 	}
+
 }

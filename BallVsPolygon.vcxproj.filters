@@ -20,6 +20,9 @@
     <Filter Include="Sources\IO">
       <UniqueIdentifier>{a22f5339-d1f8-413d-bc76-b09722ddc318}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Physics\Collisions">
+      <UniqueIdentifier>{a42c3216-4c9c-4589-aa7b-c97229a5bf79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h">
@@ -31,9 +34,6 @@
     <ClInclude Include="Source\Objects\Polygon.h">
       <Filter>Sources\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Physics\BallBouncer.h">
-      <Filter>Sources\Physics</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Physics\AxialSymmetry.h">
       <Filter>Sources\Physics</Filter>
     </ClInclude>
@@ -43,14 +43,20 @@
     <ClInclude Include="Source\IO\VectorImporter.h">
       <Filter>Sources\IO</Filter>
     </ClInclude>
-    <ClInclude Include="Source\IO\ConvexShapeImporter.h">
-      <Filter>Sources\IO</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Physics\Basics\Timer.h">
       <Filter>Sources\Physics\Basics</Filter>
     </ClInclude>
     <ClInclude Include="Source\Physics\Basics\Line.h">
       <Filter>Sources\Physics\Basics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IO\ConvexShapeImporter.h">
+      <Filter>Sources\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Collisions\BallBouncer.h">
+      <Filter>Sources\Physics\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Collisions\CollisionChecker.h">
+      <Filter>Sources\Physics\Collisions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -66,9 +72,6 @@
     <ClCompile Include="Source\Objects\Polygon.cpp">
       <Filter>Sources\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Physics\BallBouncer.cpp">
-      <Filter>Sources\Physics</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Physics\AxialSymmetry.cpp">
       <Filter>Sources\Physics</Filter>
     </ClCompile>
@@ -78,14 +81,20 @@
     <ClCompile Include="Source\IO\VectorImporter.cpp">
       <Filter>Sources\IO</Filter>
     </ClCompile>
-    <ClCompile Include="Source\IO\ConvexShapeImporter.cpp">
-      <Filter>Sources\IO</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Physics\Basics\Timer.cpp">
       <Filter>Sources\Physics\Basics</Filter>
     </ClCompile>
     <ClCompile Include="Source\Physics\Basics\Line.cpp">
       <Filter>Sources\Physics\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IO\ConvexShapeImporter.cpp">
+      <Filter>Sources\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Collisions\BallBouncer.cpp">
+      <Filter>Sources\Physics\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Collisions\CollisionChecker.cpp">
+      <Filter>Sources\Physics\Collisions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

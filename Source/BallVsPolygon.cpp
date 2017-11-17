@@ -1,10 +1,11 @@
 #include "Objects/Ball.h"
 #include "Objects/Polygon.h"
+#include "Physics/Basics/Timer.h"
 #include <SFML/Graphics.hpp>
 
 // Do refaktoryzacji:
 // 1) Klasa 'Ball', 'BallBouncer'
-// 2) Zmiana systemu liczenia czasu, a co za tym idzie prêdkoœci (czas bêdzie zewnêtrzny, wspólny dla wszystkich)
+// ---2) Zmiana systemu liczenia czasu, a co za tym idzie prêdkoœci (czas bêdzie zewnêtrzny, wspólny dla wszystkich)
 // 3) Naprawa b³êdów w odbijaniu pi³ki
 //
 // Do implementacji:
@@ -18,6 +19,8 @@ public:
 	BallVsPolygon() : window(sf::VideoMode(1200, 600), "BallVsPolygon") { }
 
 	void run() {
+
+		gameTimer.restart();
 
 		while(window.isOpen()) {
 
@@ -41,7 +44,9 @@ private:
 
 	void updateObjects() {
 
-		ball.update();
+		const float ellapsedTime = gameTimer.getEllapsedTime();
+
+		ball.update(ellapsedTime);
 		ball.bounceOnCollisionWith(polygon);
 
 	}
@@ -61,6 +66,7 @@ private:
 	Ball ball;
 	Polygon polygon;
 	sf::RenderWindow window;
+	Timer gameTimer;
 
 };
 

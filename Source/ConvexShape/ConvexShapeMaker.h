@@ -8,11 +8,11 @@ class ConvexShapeMaker {
 public:
 
 	ConvexShapeMaker(const std::vector<sf::Vector2f>& points);
-	sf::ConvexShape makeConvexShape();
+	sf::ConvexShape makeConvexShape() const;
 
 private:
 
-	void throwIfPointCountIsTooSmall();
+	void throwIfPointCountIsTooSmall() const;
 
 	const std::vector<sf::Vector2f>& points;
 

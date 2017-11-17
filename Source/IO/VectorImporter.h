@@ -8,13 +8,12 @@ class VectorImporter {
 public:
 
 	VectorImporter(std::istream& stream);
-
 	void importVector(sf::Vector2f& vector);
 
 private:
 
 	void getSeparator();
-	void throwSeparatorIsInvalid(char separator);
+	void throwIfSeparatorIsInvalid(char separator);
 
 	std::istream& stream;
 

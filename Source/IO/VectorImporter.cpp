@@ -19,11 +19,11 @@ void VectorImporter::getSeparator() {
 
 	char separator;
 	stream >> separator;
-	throwSeparatorIsInvalid(separator);
+	throwIfSeparatorIsInvalid(separator);
 
 }
 
-void VectorImporter::throwSeparatorIsInvalid(char separator) {
+void VectorImporter::throwIfSeparatorIsInvalid(char separator) {
 
 	if(separator != ',') {
 		stream.setstate(std::ios_base::failbit);

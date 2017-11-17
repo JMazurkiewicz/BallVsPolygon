@@ -120,10 +120,11 @@
     <ClInclude Include="Source\Objects\Ball.h" />
     <ClInclude Include="Source\Objects\Polygon.h" />
     <ClInclude Include="Source\Physics\AxialSymmetry.h" />
-    <ClInclude Include="Source\Physics\BallBouncer.h" />
     <ClInclude Include="Source\Physics\Basics\Timer.h" />
     <ClInclude Include="Source\Physics\Basics\Line.h" />
     <ClInclude Include="Source\Physics\Basics\Velocity.h" />
+    <ClInclude Include="Source\Physics\Collisions\BallBouncer.h" />
+    <ClInclude Include="Source\Physics\Collisions\CollisionChecker.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BallVsPolygon.cpp" />
@@ -133,10 +134,11 @@
     <ClCompile Include="Source\Objects\Ball.cpp" />
     <ClCompile Include="Source\Objects\Polygon.cpp" />
     <ClCompile Include="Source\Physics\AxialSymmetry.cpp" />
-    <ClCompile Include="Source\Physics\BallBouncer.cpp" />
     <ClCompile Include="Source\Physics\Basics\Timer.cpp" />
     <ClCompile Include="Source\Physics\Basics\Line.cpp" />
     <ClCompile Include="Source\Physics\Basics\Velocity.cpp" />
+    <ClCompile Include="Source\Physics\Collisions\BallBouncer.cpp" />
+    <ClCompile Include="Source\Physics\Collisions\CollisionChecker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

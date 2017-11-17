@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Objects/Polygon.h"
-#include <SFML/Graphics.hpp>
 #include "Physics/Basics/Velocity.h"
+#include <SFML/Graphics.hpp>
 
 class Ball : public sf::CircleShape {
 
@@ -13,7 +13,7 @@ public:
 	const Velocity& getVelocity() const;
 	void setVelocity(const Velocity& velocity);
 
-	void update();
+	void update(float time);
 	void bounceOnCollisionWith(const Polygon& polygon);
 
 private:
