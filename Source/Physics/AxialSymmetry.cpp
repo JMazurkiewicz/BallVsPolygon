@@ -1,7 +1,9 @@
 #include "Physics/AxialSymmetry.h"
 
 AxialSymmetry::AxialSymmetry(const Line& axis) : axis(axis) {
+
 	prepareAxis();
+
 }
 
 sf::Vector2f AxialSymmetry::getSymmetricalVector(const sf::Vector2f& vector) {
@@ -14,5 +16,7 @@ sf::Vector2f AxialSymmetry::getSymmetricalVector(const sf::Vector2f& vector) {
 }
 
 void AxialSymmetry::prepareAxis() {
+
 	axis.c = 0;
+
 }

@@ -3,10 +3,8 @@
 #include "Physics/Basics/Timer.h"
 #include <SFML/Graphics.hpp>
 
-// Do refaktoryzacji:
-// 1) Klasa 'Ball', 'BallBouncer'
-// ---2) Zmiana systemu liczenia czasu, a co za tym idzie prêdkoœci (czas bêdzie zewnêtrzny, wspólny dla wszystkich)
-// 3) Naprawa b³êdów w odbijaniu pi³ki
+// Opis b³êdu w odbijaniu pi³ki:
+// Pi³ka jest odbijana po zetkniêciu siê z ca³¹ lini¹, nie tylko z jej fragmentem ograniczonym punktami.
 //
 // Do implementacji:
 // 1) Pauza za pomoc¹ spacji,
@@ -24,7 +22,7 @@ public:
 
 		while(window.isOpen()) {
 
-			closeIfSpaceIsPressed();
+			checkEvents();
 			updateObjects();
 			displayNewView();
 
@@ -34,10 +32,18 @@ public:
 
 private:
 
-	void closeIfSpaceIsPressed() {
+	void checkEvents() {
 
-		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-			window.close();
+		sf::Event event;
+
+		while(window.pollEvent(event)) {
+
+			if(event.type == sf::Event::Closed) {
+
+				window.close();
+
+			}
+
 		}
 
 	}

@@ -8,7 +8,6 @@ class BallBouncer {
 public:
 
 	BallBouncer(Ball& ball);
-
 	void bounceFrom(const Line& line);
 
 private:

@@ -1,17 +1,19 @@
 #include <cstddef>
 #include "Physics/Collisions/CollisionChecker.h"
+#include <utility>
 
-bool CollisionChecker::didCollisionHappen(const Polygon& polygon, const Ball& ball) {
+CollisionChecker::CollisionChecker(const Ball& ball, const Polygon& polygon) : ball(ball), polygon(polygon) { }
 
-	const std::size_t pointCount = polygon.getPointCount();
+bool CollisionChecker::didCollisionHappen() {
 
-	for(std::size_t i = 0; i < pointCount; ++i) {
+	for(std::size_t i = 0; i < polygon.getPointCount(); ++i) {
 
-		const Line side = getSideOfPolygon(i, polygon);
+		const sf::Vector2f begining = getBeginingOfLine(i);
+		const sf::Vector2f ending = getEndingOfLine(i);
 
-		if(didCollisionHappenWithSide(side, ball)) {
+		if(didCollisionHappenWithSide(begining, ending)) {
 
-			collsionSide = side;
+			collisionSide.assignLinePassingThroughTwoPoints(begining, ending);
 			return true;
 			
 		}
@@ -22,23 +24,31 @@ bool CollisionChecker::didCollisionHappen(const Polygon& polygon, const Ball& ba
 
 }
 
-Line CollisionChecker::getCollisionSide() const {
+Line CollisionChecker::getCollidedSide() const {
 
-	return collsionSide;
-
-}
-
-Line CollisionChecker::getSideOfPolygon(std::size_t i, const Polygon& polygon) const {
-	
-	const std::size_t previousPointIndex = (i == 0) ? (polygon.getPointCount() - 1) : (i - 1);
-	const Line side(polygon.getPoint(previousPointIndex), polygon.getPoint(i));
-
-	return side;
+	return collisionSide;
 
 }
 
-bool CollisionChecker::didCollisionHappenWithSide(const Line& side, const Ball& ball) const {
+sf::Vector2f CollisionChecker::getBeginingOfLine(std::size_t sideIndex) const {
 
-	return side.distanceFromPoint(ball.getPosition()) <= ball.getRadius();
+	const std::size_t pointIndex = (sideIndex == 0) ? (polygon.getPointCount() - 1) : (sideIndex - 1);
+	return polygon.getPoint(pointIndex);
+
+}
+
+sf::Vector2f CollisionChecker::getEndingOfLine(std::size_t sideIndex) const {
+	return polygon.getPoint(sideIndex);
+}
+
+bool CollisionChecker::didCollisionHappenWithSide(const sf::Vector2f& begining, const sf::Vector2f& ending) const {
+
+	const Line side(begining, ending);
+	const sf::Vector2f ballPosition = ball.getPosition();
+
+	return
+		side.getDistanceFromPoint(ballPosition) <= ball.getRadius() &&
+		((ballPosition.x > begining.x && ballPosition.x < ending.x) ||
+		 (ballPosition.x > ending.x && ballPosition.x < begining.x));
 
 }

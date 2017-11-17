@@ -12,12 +12,12 @@ Line::Line(const sf::Vector2f& pointA, const sf::Vector2f& pointB) {
 
 void Line::assignLinePassingThroughTwoPoints(const sf::Vector2f& pointA, const sf::Vector2f& pointB) {
 
-	const float D = (pointB.x - pointA.x);
-	const float E = (pointB.y - pointA.y);
+	const float d = (pointB.x - pointA.x);
+	const float e = (pointB.y - pointA.y);
 
-	a = -E;
-	b = D;
-	c = E*pointA.x - D*pointA.y;
+	a = -e;
+	b = d;
+	c = e*pointA.x - d*pointA.y;
 	 
 }
 
@@ -27,22 +27,22 @@ bool Line::isParallelTo(const Line& other) const {
 
 }
 
-float Line::distanceFromPoint(const sf::Vector2f& point) const {
+sf::Vector2f Line::getCommonPoint(const Line& other) const {
 
-	return abs(a*point.x + b*point.y + c) / sqrt(a*a + b*b);
+	throwIfHasNoCommonPoint(other);
+
+	const float ab = a*other.b - other.a*b;
+	const float bc = b*other.c - other.b*c;
+	const float ca = c*other.a - other.c*a;
+
+	return sf::Vector2f(bc/ab, ca/ab);
 
 }
 
-sf::Vector2f Line::getCommonPoint(const Line& other) const {
-	
-	throwIfHasNoCommonPoint(other);
+float Line::getDistanceFromPoint(const sf::Vector2f& point) const {
 
-	const float AB = a*other.b - other.a*b;
-	const float BC = b*other.c - other.b*c;
-	const float CA = c*other.a - other.c*a;
+	return abs(a*point.x + b*point.y + c) / sqrt(a*a + b*b);
 
-	return sf::Vector2f(BC/AB, CA/AB);
-	
 }
 
 Line Line::getPerpendicularLinePassingThroughPoint(const sf::Vector2f& point) const {

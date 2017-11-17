@@ -8,14 +8,21 @@ class CollisionChecker {
 
 public:
 
-	bool didCollisionHappen(const Polygon& polygon, const Ball& ball);
-	Line getCollisionSide() const;
+	CollisionChecker(const Ball& ball, const Polygon& polygon);
+
+	bool didCollisionHappen();
+	Line getCollidedSide() const;
 
 private:
 
-	Line getSideOfPolygon(std::size_t i, const Polygon& polygon) const;
-	bool didCollisionHappenWithSide(const Line& side, const Ball& ball) const;
+	sf::Vector2f getBeginingOfLine(std::size_t sideIndex) const;
+	sf::Vector2f getEndingOfLine(std::size_t sideIndex) const;
 
-	Line collsionSide;
+	bool didCollisionHappenWithSide(const sf::Vector2f& begining, const sf::Vector2f& endng) const;
+	
+	const Ball& ball;
+	const Polygon& polygon;
+
+	Line collisionSide;
 
 };

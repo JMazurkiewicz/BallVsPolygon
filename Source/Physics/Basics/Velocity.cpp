@@ -3,6 +3,6 @@
 
 sf::Vector2f Velocity::getDistanceVector(float time) {
 
-	return (*this) * time; // s=v*Δt
+	return (*this) * time;
 
 }

@@ -6,17 +6,17 @@
 namespace {
 
 	constexpr float BALL_RADIUS = 10;
+	constexpr float BALL_VELOCITY = 500;
 
 }
 
-Ball::Ball() : velocity(300, 300) {
+Ball::Ball() : velocity(BALL_VELOCITY, BALL_VELOCITY) {
 
 	setRadius(BALL_RADIUS);
-	setFillColor(sf::Color::Red);
+	setFillColor(sf::Color(14, 66, 23));
 
 	setOrigin(BALL_RADIUS, BALL_RADIUS);
-
-	setPosition(300, 300);
+	setPosition(200, 110);
 
 }
 
@@ -40,11 +40,11 @@ void Ball::update(float time) {
 
 void Ball::bounceOnCollisionWith(const Polygon& polygon) {
 
-	CollisionChecker collisionChecker;
-	if(collisionChecker.didCollisionHappen(polygon, *this)) {
+	CollisionChecker collisionChecker(*this, polygon);
+	if(collisionChecker.didCollisionHappen()) {
 
 		BallBouncer ballBouncer(*this);
-		ballBouncer.bounceFrom(collisionChecker.getCollisionSide());
+		ballBouncer.bounceFrom(collisionChecker.getCollidedSide());
 
 	}
 
