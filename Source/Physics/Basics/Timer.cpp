@@ -1,11 +1,15 @@
 #include "Physics/Basics/Timer.h"
 
 Timer::Timer() {
+
 	restart();
+
 }
 
 void Timer::restart() {
+
 	lastStop = Clock::now();
+
 }
 
 float Timer::getEllapsedTime() {

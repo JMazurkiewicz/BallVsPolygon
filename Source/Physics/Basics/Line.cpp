@@ -4,20 +4,22 @@
 
 Line::Line() : a(0), b(1), c(0) { }
 
-Line::Line(const sf::Vector2f& pointA, const sf::Vector2f& pointB) {
+Line::Line(const sf::Vector2f& first, const sf::Vector2f& second) {
 
-	assignLinePassingThroughTwoPoints(pointA, pointB);
+	assignLinePassingThroughTwoPoints(first, second);
 
 }
 
-void Line::assignLinePassingThroughTwoPoints(const sf::Vector2f& pointA, const sf::Vector2f& pointB) {
+void Line::assignLinePassingThroughTwoPoints(const sf::Vector2f& first, const sf::Vector2f& second) {
 
-	const float d = (pointB.x - pointA.x);
-	const float e = (pointB.y - pointA.y);
+	throwIfUnableToMakeALine(first, second);
+
+	const float d = (second.x - first.x);
+	const float e = (second.y - first.y);
 
 	a = -e;
 	b = d;
-	c = e*pointA.x - d*pointA.y;
+	c = e*first.x - d*first.y;
 	 
 }
 
@@ -54,6 +56,14 @@ Line Line::getPerpendicularLinePassingThroughPoint(const sf::Vector2f& point) co
 	perpendicularLine.c = a*point.y - b*point.x;
 
 	return perpendicularLine;
+
+}
+
+void Line::throwIfUnableToMakeALine(const sf::Vector2f& first, const sf::Vector2f& second) const {
+
+	if(first == second) {
+		throw std::logic_error("unable to make a line from given points");
+	}
 
 }
 

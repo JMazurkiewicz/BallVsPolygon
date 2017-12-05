@@ -17,6 +17,6 @@ sf::Vector2f AxialSymmetry::getSymmetricalVector(const sf::Vector2f& vector) {
 
 void AxialSymmetry::prepareAxis() {
 
-	axis.c = 0;
-
+	axis.c = 0
+		;
 }

@@ -5,15 +5,15 @@
 
 namespace {
 
-	constexpr float BALL_RADIUS = 10;
-	constexpr float BALL_VELOCITY = 500;
+	constexpr float BALL_RADIUS = 20;
+	constexpr float BALL_VELOCITY = 250;
 
 }
 
 Ball::Ball() : velocity(BALL_VELOCITY, BALL_VELOCITY) {
 
 	setRadius(BALL_RADIUS);
-	setFillColor(sf::Color(14, 66, 23));
+	setFillColor(sf::Color::Green);
 
 	setOrigin(BALL_RADIUS, BALL_RADIUS);
 	setPosition(200, 110);
@@ -44,7 +44,7 @@ void Ball::bounceOnCollisionWith(const Polygon& polygon) {
 	if(collisionChecker.didCollisionHappen()) {
 
 		BallBouncer ballBouncer(*this);
-		ballBouncer.bounceFrom(collisionChecker.getCollidedSide());
+		ballBouncer.bounceFrom(collisionChecker.getCollidedLine());
 
 	}
 

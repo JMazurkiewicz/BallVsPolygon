@@ -58,6 +58,9 @@
     <ClInclude Include="Source\Physics\Collisions\CollisionChecker.h">
       <Filter>Sources\Physics\Collisions</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Physics\Basics\LineSegment.h">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BallVsPolygon.cpp">
@@ -96,9 +99,13 @@
     <ClCompile Include="Source\Physics\Collisions\CollisionChecker.cpp">
       <Filter>Sources\Physics\Collisions</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Physics\Basics\LineSegment.cpp">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="points.txt" />
