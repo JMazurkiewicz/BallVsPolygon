@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Physics/Basics/ClosedInterval.h"
 #include "Physics/Basics/Line.h"
 #include <SFML/Graphics.hpp>
 
@@ -7,15 +8,16 @@ class LineSegment {
 
 public:
 
-	LineSegment(const sf::Vector2f& pointA, const sf::Vector2f& pointB);
+	LineSegment(const sf::Vector2f& first, const sf::Vector2f& second);
 
 	const Line& getLine() const;
-	float getBegin() const;
-	float getEnd() const;
+	const ClosedInterval& getDomain() const;
+
+	operator Line() const;
 
 private:
 
 	Line line;
-	float begin, end;
+	ClosedInterval domain;
 
 };

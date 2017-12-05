@@ -1,23 +1,16 @@
-#include <algorithm>
 #include "Physics/Basics/LineSegment.h"
 
-LineSegment::LineSegment(const sf::Vector2f& pointA, const sf::Vector2f& pointB)
-	: line(pointA, pointB) {
+LineSegment::LineSegment(const sf::Vector2f& first, const sf::Vector2f& second)
+	: line(first, second), domain(first.x, second.x) { }
 
-	auto interval = std::minmax(pointA.x, pointB.x);
-	begin = interval.first;
-	end = interval.second;
-
-}
-
-const Line & LineSegment::getLine() const {
+const Line& LineSegment::getLine() const {
 	return line;
 }
 
-float LineSegment::getBegin() const {
-	return begin;
+const ClosedInterval& LineSegment::getDomain() const {
+	return domain;
 }
 
-float LineSegment::getEnd() const {
-	return end;
+LineSegment::operator Line() const {
+	return getLine();
 }

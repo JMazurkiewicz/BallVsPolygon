@@ -1,5 +1,7 @@
-﻿#include <cmath>
-#include "Physics/Basics/Velocity.h"
+﻿#include "Physics/Basics/Velocity.h"
+
+Velocity::Velocity(const sf::Vector2f& vector)
+	: sf::Vector2f(vector) { }
 
 sf::Vector2f Velocity::getDistanceVector(float time) {
 

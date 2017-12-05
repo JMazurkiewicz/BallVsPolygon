@@ -120,6 +120,7 @@
     <ClInclude Include="Source\Objects\Ball.h" />
     <ClInclude Include="Source\Objects\Polygon.h" />
     <ClInclude Include="Source\Physics\AxialSymmetry.h" />
+    <ClInclude Include="Source\Physics\Basics\ClosedInterval.h" />
     <ClInclude Include="Source\Physics\Basics\LineSegment.h" />
     <ClInclude Include="Source\Physics\Basics\Timer.h" />
     <ClInclude Include="Source\Physics\Basics\Line.h" />
@@ -135,6 +136,7 @@
     <ClCompile Include="Source\Objects\Ball.cpp" />
     <ClCompile Include="Source\Objects\Polygon.cpp" />
     <ClCompile Include="Source\Physics\AxialSymmetry.cpp" />
+    <ClCompile Include="Source\Physics\Basics\ClosedInterval.cpp" />
     <ClCompile Include="Source\Physics\Basics\LineSegment.cpp" />
     <ClCompile Include="Source\Physics\Basics\Timer.cpp" />
     <ClCompile Include="Source\Physics\Basics\Line.cpp" />

@@ -12,8 +12,6 @@ public:
 
 private:
 
-	void prepareAxis();
-
-	Line axis;
+	const Line axis;
 
 };

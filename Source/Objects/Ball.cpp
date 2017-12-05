@@ -5,8 +5,8 @@
 
 namespace {
 
-	constexpr float BALL_RADIUS = 20;
-	constexpr float BALL_VELOCITY = 250;
+	constexpr float BALL_RADIUS = 30;
+	constexpr float BALL_VELOCITY = 50;
 
 }
 
@@ -40,11 +40,11 @@ void Ball::update(float time) {
 
 void Ball::bounceOnCollisionWith(const Polygon& polygon) {
 
-	CollisionChecker collisionChecker(*this, polygon);
-	if(collisionChecker.didCollisionHappen()) {
+	CollisionChecker collisionChecker(*this);
+	if(collisionChecker.didCollisionHappenWith(polygon)) {
 
 		BallBouncer ballBouncer(*this);
-		ballBouncer.bounceFrom(collisionChecker.getCollidedLine());
+		ballBouncer.bounceFrom(collisionChecker.getCollidedSide());
 
 	}
 

@@ -17,7 +17,7 @@ Polygon::Polygon() {
 LineSegment Polygon::getSide(std::size_t index) const {
 
 	const std::size_t beginIndex = index;
-	const std::size_t endIndex = (index+1 == getPointCount()) ? (0) : (index + 1);
+	const std::size_t endIndex = (index + 1 == getPointCount()) ? (0) : (index + 1);
 
 	return LineSegment(getPoint(beginIndex), getPoint(endIndex));
 

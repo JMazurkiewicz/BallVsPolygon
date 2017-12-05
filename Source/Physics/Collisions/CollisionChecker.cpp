@@ -1,11 +1,9 @@
 #include <cstddef>
-#include "Physics/Basics/LineSegment.h"
 #include "Physics/Collisions/CollisionChecker.h"
-#include <utility>
 
-CollisionChecker::CollisionChecker(const Ball& ball, const Polygon& polygon) : ball(ball), polygon(polygon) { }
+CollisionChecker::CollisionChecker(const Ball& ball) : ball(ball) { }
 
-bool CollisionChecker::didCollisionHappen() {
+bool CollisionChecker::didCollisionHappenWith(const Polygon& polygon) {
 
 	for(std::size_t i = 0; i < polygon.getPointCount(); ++i) {
 
@@ -13,7 +11,7 @@ bool CollisionChecker::didCollisionHappen() {
 
 		if(didCollisionHappenWithSide(side)) {
 
-			collisionLine = side.getLine();
+			collidedSide = side;
 			return true;
 			
 		}
@@ -24,9 +22,9 @@ bool CollisionChecker::didCollisionHappen() {
 
 }
 
-Line CollisionChecker::getCollidedLine() const {
+Line CollisionChecker::getCollidedSide() const {
 
-	return collisionLine;
+	return collidedSide;
 
 }
 
@@ -36,6 +34,6 @@ bool CollisionChecker::didCollisionHappenWithSide(const LineSegment& side) const
 
 	return
 		side.getLine().getDistanceFromPoint(ballPosition) <= ball.getRadius() &&
-		(ballPosition.x > side.getBegin() && ballPosition.x < side.getEnd());
+		side.getDomain().contains(ballPosition.x);
 
 }

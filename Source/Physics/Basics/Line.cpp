@@ -47,6 +47,18 @@ float Line::getDistanceFromPoint(const sf::Vector2f& point) const {
 
 }
 
+Line Line::getParallelLinePassingThroughPoint(const sf::Vector2f& point) const {
+	
+	Line parallelLine;
+
+	parallelLine.a = a;
+	parallelLine.b = b;
+	parallelLine.c = -a*point.x - b*point.y;
+
+	return parallelLine;
+
+}
+
 Line Line::getPerpendicularLinePassingThroughPoint(const sf::Vector2f& point) const {
 
 	Line perpendicularLine;
@@ -70,7 +82,11 @@ void Line::throwIfUnableToMakeALine(const sf::Vector2f& first, const sf::Vector2
 void Line::throwIfHasNoCommonPoint(const Line& other) const {
 
 	if(isParallelTo(other)) {
-		throw std::logic_error("lines don't intersect");
+		if(c == other.c) {
+			throw std::logic_error("lines are the same");
+		} else {
+			throw std::logic_error("lines don't intersect");
+		}
 	}
 
 }

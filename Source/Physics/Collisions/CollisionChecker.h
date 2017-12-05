@@ -9,18 +9,16 @@ class CollisionChecker {
 
 public:
 
-	CollisionChecker(const Ball& ball, const Polygon& polygon);
+	CollisionChecker(const Ball& ball);
 
-	bool didCollisionHappen();
-	Line getCollidedLine() const;
+	bool didCollisionHappenWith(const Polygon& polygon);
+	Line getCollidedSide() const;
 
 private:
 
 	bool didCollisionHappenWithSide(const LineSegment& side) const;
 	
 	const Ball& ball;
-	const Polygon& polygon;
-
-	Line collisionLine;
+	Line collidedSide;
 
 };
