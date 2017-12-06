@@ -4,11 +4,15 @@ class ClosedInterval {
 
 public:
 
-	ClosedInterval(float begin, float end);
+	ClosedInterval(float beginValue, float endValue);
+
 	bool contains(float value) const;
+
+	float begin() const;
+	float end() const;
 
 private:
 
-	float begin, end;
+	float beginValue, endValue;
 
 };

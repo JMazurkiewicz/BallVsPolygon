@@ -11,13 +11,16 @@ public:
 	LineSegment(const sf::Vector2f& first, const sf::Vector2f& second);
 
 	const Line& getLine() const;
-	const ClosedInterval& getDomain() const;
+	const ClosedInterval& getDomainX() const;
+	const ClosedInterval& getDomainY() const;
 
 	operator Line() const;
 
 private:
 
 	Line line;
-	ClosedInterval domain;
+
+	ClosedInterval domainX;
+	ClosedInterval domainY;
 
 };

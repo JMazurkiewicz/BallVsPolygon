@@ -43,7 +43,7 @@ sf::Vector2f Line::getCommonPoint(const Line& other) const {
 
 float Line::getDistanceFromPoint(const sf::Vector2f& point) const {
 
-	return abs(a*point.x + b*point.y + c) / sqrt(a*a + b*b);
+	return std::abs(a*point.x + b*point.y + c) / std::sqrt(a*a + b*b);
 
 }
 

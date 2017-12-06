@@ -3,9 +3,7 @@
 #include "Physics/Basics/Timer.h"
 #include <SFML/Graphics.hpp>
 
-// Do implementacji:
-// 1) Pauza za pomoc¹ spacji,
-// 2) Mo¿liwoœæ ustawienia pi³ki w losowym miejscu z losowym wektorem prêdkoœci.
+// 2) Mo¿liwoœæ ustawienia pi³ki w losowym miejscu z losowym wektorem prêdkoœci (przy rozpoczêciu)
 
 class BallVsPolygon {
 
@@ -39,9 +37,20 @@ private:
 
 				window.close();
 
+			} else if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {
+
+				pause();
+
 			}
 
 		}
+
+	}
+
+	void pause() {
+
+		while(sf::Keyboard::isKeyPressed(sf::Keyboard::Space));
+		gameTimer.restart();
 
 	}
 

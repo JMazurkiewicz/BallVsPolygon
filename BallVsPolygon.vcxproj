@@ -145,7 +145,6 @@
     <ClCompile Include="Source\Physics\Collisions\CollisionChecker.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

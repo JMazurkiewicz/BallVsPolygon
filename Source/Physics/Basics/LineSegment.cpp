@@ -1,14 +1,18 @@
 #include "Physics/Basics/LineSegment.h"
 
 LineSegment::LineSegment(const sf::Vector2f& first, const sf::Vector2f& second)
-	: line(first, second), domain(first.x, second.x) { }
+	: line(first, second), domainX(first.x, second.x), domainY(first.y, second.y) { }
 
 const Line& LineSegment::getLine() const {
 	return line;
 }
 
-const ClosedInterval& LineSegment::getDomain() const {
-	return domain;
+const ClosedInterval& LineSegment::getDomainX() const {
+	return domainX;
+}
+
+const ClosedInterval& LineSegment::getDomainY() const {
+	return domainY;
 }
 
 LineSegment::operator Line() const {

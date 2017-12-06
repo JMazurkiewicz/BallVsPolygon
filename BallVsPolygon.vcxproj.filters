@@ -23,6 +23,9 @@
     <Filter Include="Sources\Physics\Collisions">
       <UniqueIdentifier>{a42c3216-4c9c-4589-aa7b-c97229a5bf79}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\GameState">
+      <UniqueIdentifier>{e95f10d6-ae50-4580-9f86-f83d5bb9e1dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h">
@@ -111,7 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="points.txt" />

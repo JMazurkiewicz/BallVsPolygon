@@ -1,14 +1,28 @@
 #include <algorithm>
 #include "Physics/Basics/ClosedInterval.h"
 
-ClosedInterval::ClosedInterval(float begin, float end) {
+ClosedInterval::ClosedInterval(float beginValue, float endValue) {
 
-	auto orderedInterval = std::minmax(begin, end);
-	this->begin = orderedInterval.first;
-	this->end = orderedInterval.second;
+	auto orderedInterval = std::minmax(beginValue, endValue);
+	this->beginValue = orderedInterval.first;
+	this->endValue = orderedInterval.second;
 
 }
 
 bool ClosedInterval::contains(float value) const {
-	return value > begin && value < end;
+
+	return value > beginValue && value < endValue;
+
+}
+
+float ClosedInterval::begin() const {
+
+	return beginValue;
+
+}
+
+float ClosedInterval::end() const {
+
+	return endValue;
+
 }

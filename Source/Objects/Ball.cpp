@@ -5,8 +5,8 @@
 
 namespace {
 
-	constexpr float BALL_RADIUS = 30;
-	constexpr float BALL_VELOCITY = 50;
+	constexpr float BALL_RADIUS = 15;
+	constexpr float BALL_VELOCITY = 150;
 
 }
 
@@ -16,7 +16,7 @@ Ball::Ball() : velocity(BALL_VELOCITY, BALL_VELOCITY) {
 	setFillColor(sf::Color::Green);
 
 	setOrigin(BALL_RADIUS, BALL_RADIUS);
-	setPosition(200, 110);
+	setPosition(350, 250);
 
 }
 
