@@ -24,9 +24,7 @@ bool CollisionChecker::didCollisionHappenWith(const Polygon& polygon) {
 }
 
 Line CollisionChecker::getCollidedSide() const {
-
 	return collidedSide;
-
 }
 
 bool CollisionChecker::didCollisionHappenWithSide(const LineSegment& side) const {

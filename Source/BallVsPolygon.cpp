@@ -3,7 +3,9 @@
 #include "Physics/Basics/Timer.h"
 #include <SFML/Graphics.hpp>
 
-// 2) Mo¿liwoœæ ustawienia pi³ki w losowym miejscu z losowym wektorem prêdkoœci (przy rozpoczêciu)
+// Potrzebna przebudowa klas BallVsPolygon i Ball
+// Potrzebne rozbicie klasy BallVsPolygon na mniejsze wykonuj¹ce mniejsze zadania
+// Do zaimplementowania pozosta³a mo¿liwoœæ wyboru pocz¹tkowej pozycji pi³ki i pauza
 
 class BallVsPolygon {
 
