@@ -16,7 +16,7 @@ Ball::Ball() : velocity(BALL_VELOCITY, BALL_VELOCITY) {
 	setFillColor(sf::Color::Green);
 
 	setOrigin(BALL_RADIUS, BALL_RADIUS);
-	setPosition(350, 250);
+	setPosition(0, 0);
 
 }
 

@@ -7,7 +7,7 @@ Polygon::Polygon() {
 
 	loadPointsFromFile();
 
-	setFillColor(sf::Color::Black);
+	setFillColor(sf::Color(0, 0, 0, 0));
 
 	setOutlineColor(sf::Color::White);
 	setOutlineThickness(1);

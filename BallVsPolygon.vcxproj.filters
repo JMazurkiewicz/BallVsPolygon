@@ -26,6 +26,9 @@
     <Filter Include="Sources\GameState">
       <UniqueIdentifier>{e95f10d6-ae50-4580-9f86-f83d5bb9e1dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Management">
+      <UniqueIdentifier>{8b0f557e-8f37-4fd2-987e-052594985359}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h">
@@ -66,6 +69,12 @@
     </ClInclude>
     <ClInclude Include="Source\Physics\Basics\ClosedInterval.h">
       <Filter>Sources\Physics\Basics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Management\MainWindow.h">
+      <Filter>Sources\Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Management\ObjectManager.h">
+      <Filter>Sources\Management</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +119,12 @@
     </ClCompile>
     <ClCompile Include="Source\Physics\Basics\ClosedInterval.cpp">
       <Filter>Sources\Physics\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Management\MainWindow.cpp">
+      <Filter>Sources\Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Management\ObjectManager.cpp">
+      <Filter>Sources\Management</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

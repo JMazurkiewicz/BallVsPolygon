@@ -117,6 +117,8 @@
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h" />
     <ClInclude Include="Source\IO\ConvexShapeImporter.h" />
     <ClInclude Include="Source\IO\VectorImporter.h" />
+    <ClInclude Include="Source\Management\MainWindow.h" />
+    <ClInclude Include="Source\Management\ObjectManager.h" />
     <ClInclude Include="Source\Objects\Ball.h" />
     <ClInclude Include="Source\Objects\Polygon.h" />
     <ClInclude Include="Source\Physics\AxialSymmetry.h" />
@@ -133,6 +135,8 @@
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp" />
     <ClCompile Include="Source\IO\ConvexShapeImporter.cpp" />
     <ClCompile Include="Source\IO\VectorImporter.cpp" />
+    <ClCompile Include="Source\Management\MainWindow.cpp" />
+    <ClCompile Include="Source\Management\ObjectManager.cpp" />
     <ClCompile Include="Source\Objects\Ball.cpp" />
     <ClCompile Include="Source\Objects\Polygon.cpp" />
     <ClCompile Include="Source\Physics\AxialSymmetry.cpp" />

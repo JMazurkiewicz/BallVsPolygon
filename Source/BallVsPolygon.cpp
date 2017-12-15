@@ -1,17 +1,12 @@
+#include "Management/MainWindow.h"
+#include "Management/ObjectManager.h"
 #include "Objects/Ball.h"
 #include "Objects/Polygon.h"
 #include "Physics/Basics/Timer.h"
-#include <SFML/Graphics.hpp>
-
-// Potrzebna przebudowa klas BallVsPolygon i Ball
-// Potrzebne rozbicie klasy BallVsPolygon na mniejsze wykonuj¹ce mniejsze zadania
-// Do zaimplementowania pozosta³a mo¿liwoœæ wyboru pocz¹tkowej pozycji pi³ki i pauza
 
 class BallVsPolygon {
 
 public:
-
-	BallVsPolygon() : window(sf::VideoMode(1200, 600), "BallVsPolygon") { }
 
 	void run() {
 
@@ -39,47 +34,33 @@ private:
 
 				window.close();
 
-			} else if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {
-
-				pause();
-
 			}
 
 		}
 
 	}
 
-	void pause() {
-
-		while(sf::Keyboard::isKeyPressed(sf::Keyboard::Space));
-		gameTimer.restart();
-
-	}
-
 	void updateObjects() {
 
 		const float ellapsedTime = gameTimer.getEllapsedTime();
+		objects.updateObjects(ellapsedTime);
 
-		ball.update(ellapsedTime);
-		ball.bounceOnCollisionWith(polygon);
+		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+			objects.setBallPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
+		}
 
 	}
 
 	void displayNewView() {
 
 		window.clear();
-
-		window.draw(polygon);
-		window.draw(ball);
-
+		objects.drawObjects(window);
 		window.display();
 
 	}
-
-
-	Ball ball;
-	Polygon polygon;
-	sf::RenderWindow window;
+	
+	MainWindow window;
+	ObjectManager objects;
 	Timer gameTimer;
 
 };
