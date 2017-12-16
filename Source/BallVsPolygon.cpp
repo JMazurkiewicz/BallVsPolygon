@@ -1,5 +1,4 @@
 #include "Management/MainWindow.h"
-#include "Management/ObjectManager.h"
 #include "Objects/Ball.h"
 #include "Objects/Polygon.h"
 #include "Physics/Basics/Timer.h"
@@ -10,7 +9,7 @@ public:
 
 	void run() {
 
-		gameTimer.restart();
+		timer.restart();
 
 		while(window.isOpen()) {
 
@@ -34,7 +33,11 @@ private:
 
 				window.close();
 
-			}
+			} else if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {
+
+				timer.switchMode();
+
+			} 
 
 		}
 
@@ -42,11 +45,14 @@ private:
 
 	void updateObjects() {
 
-		const float ellapsedTime = gameTimer.getEllapsedTime();
-		objects.updateObjects(ellapsedTime);
+		const float ellapsedTime = timer.getEllapsedTime();
+
+		ball.update(ellapsedTime);
+		ball.bounceOnCollisionWith(polygon);
 
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-			objects.setBallPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
+			ball.setPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
+			ball.activate();
 		}
 
 	}
@@ -54,14 +60,19 @@ private:
 	void displayNewView() {
 
 		window.clear();
-		objects.drawObjects(window);
+		
+		window.draw(ball);
+		window.draw(polygon);
+
 		window.display();
 
 	}
 	
 	MainWindow window;
-	ObjectManager objects;
-	Timer gameTimer;
+	Timer timer;
+
+	Ball ball;
+	Polygon polygon;
 
 };
 

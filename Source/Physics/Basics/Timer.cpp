@@ -1,7 +1,26 @@
 #include "Physics/Basics/Timer.h"
 
 Timer::Timer() {
+	enable();
+}
+
+void Timer::enable() {
 	restart();
+	isEnabled = true;
+}
+
+void Timer::disable() {
+	isEnabled = false;
+}
+
+void Timer::switchMode() {
+
+	if(isEnabled) {
+		disable();
+	} else {
+		enable();
+	}
+
 }
 
 void Timer::restart() {
@@ -10,12 +29,18 @@ void Timer::restart() {
 
 float Timer::getEllapsedTime() {
 
-	Clock::time_point nextStop = Clock::now();
+	if(isEnabled) {
 
-	using namespace std::chrono;
-	duration<float> ellapsedTime = duration_cast<duration<float>>(nextStop-lastStop);
+		Clock::time_point nextStop = Clock::now();
 
-	lastStop = nextStop;
-	return ellapsedTime.count();
+		using namespace std::chrono;
+		duration<float> ellapsedTime = duration_cast<duration<float>>(nextStop-lastStop);
+
+		lastStop = nextStop;
+		return ellapsedTime.count();
+
+	}
+
+	return 0.0f;
 
 }

@@ -2,21 +2,21 @@
 #include "Objects/Ball.h"
 #include "Physics/Collisions/BallBouncer.h"
 #include "Physics/Collisions/CollisionChecker.h"
+#include "Physics/RandomVelocityMaker.h"
 
 namespace {
 
-	constexpr float BALL_RADIUS = 15;
+	constexpr float BALL_RADIUS = 20;
 	constexpr float BALL_VELOCITY = 150;
 
 }
 
-Ball::Ball() : velocity(BALL_VELOCITY, BALL_VELOCITY) {
+Ball::Ball() : activity(false) {
 
 	setRadius(BALL_RADIUS);
-	setFillColor(sf::Color::Green);
+	setFillColor(sf::Color(91, 155, 102));
 
 	setOrigin(BALL_RADIUS, BALL_RADIUS);
-	setPosition(0, 0);
 
 }
 
@@ -32,20 +32,53 @@ void Ball::setVelocity(const Velocity& velocity) {
 
 }
 
+bool Ball::isActive() const {
+
+	return activity;
+
+}
+
+void Ball::activate() {
+
+	if(!activity) {
+
+		RandomVelocityMaker velocityMaker(BALL_VELOCITY);
+		setVelocity(velocityMaker.makeVelocity());
+
+		activity = true;
+
+	}
+
+}
+
 void Ball::update(float time) {
 
-	move(velocity.getDistanceVector(time));
+	if(isActive()) {
+		move(velocity.getDistanceVector(time));
+	}
 
 }
 
 void Ball::bounceOnCollisionWith(const Polygon& polygon) {
 
-	CollisionChecker collisionChecker(*this);
-	if(collisionChecker.didCollisionHappenWith(polygon)) {
+	if(isActive()) {
 
-		BallBouncer ballBouncer(*this);
-		ballBouncer.bounceFrom(collisionChecker.getCollidedSide());
+		CollisionChecker collisionChecker(*this);
+		if(collisionChecker.didCollisionHappenWith(polygon)) {
 
+			BallBouncer ballBouncer(*this);
+			ballBouncer.bounceFrom(collisionChecker.getCollidedSide());
+
+		}
+
+	}
+
+}
+
+void Ball::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+
+	if(isActive()) {
+		target.draw(static_cast<sf::CircleShape>(*this), states);
 	}
 
 }

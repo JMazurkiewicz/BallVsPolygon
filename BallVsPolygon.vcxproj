@@ -118,7 +118,6 @@
     <ClInclude Include="Source\IO\ConvexShapeImporter.h" />
     <ClInclude Include="Source\IO\VectorImporter.h" />
     <ClInclude Include="Source\Management\MainWindow.h" />
-    <ClInclude Include="Source\Management\ObjectManager.h" />
     <ClInclude Include="Source\Objects\Ball.h" />
     <ClInclude Include="Source\Objects\Polygon.h" />
     <ClInclude Include="Source\Physics\AxialSymmetry.h" />
@@ -129,6 +128,7 @@
     <ClInclude Include="Source\Physics\Basics\Velocity.h" />
     <ClInclude Include="Source\Physics\Collisions\BallBouncer.h" />
     <ClInclude Include="Source\Physics\Collisions\CollisionChecker.h" />
+    <ClInclude Include="Source\Physics\RandomVelocityMaker.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BallVsPolygon.cpp" />
@@ -136,7 +136,6 @@
     <ClCompile Include="Source\IO\ConvexShapeImporter.cpp" />
     <ClCompile Include="Source\IO\VectorImporter.cpp" />
     <ClCompile Include="Source\Management\MainWindow.cpp" />
-    <ClCompile Include="Source\Management\ObjectManager.cpp" />
     <ClCompile Include="Source\Objects\Ball.cpp" />
     <ClCompile Include="Source\Objects\Polygon.cpp" />
     <ClCompile Include="Source\Physics\AxialSymmetry.cpp" />
@@ -147,6 +146,7 @@
     <ClCompile Include="Source\Physics\Basics\Velocity.cpp" />
     <ClCompile Include="Source\Physics\Collisions\BallBouncer.cpp" />
     <ClCompile Include="Source\Physics\Collisions\CollisionChecker.cpp" />
+    <ClCompile Include="Source\Physics\RandomVelocityMaker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -73,8 +73,8 @@
     <ClInclude Include="Source\Management\MainWindow.h">
       <Filter>Sources\Management</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Management\ObjectManager.h">
-      <Filter>Sources\Management</Filter>
+    <ClInclude Include="Source\Physics\RandomVelocityMaker.h">
+      <Filter>Sources\Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -123,8 +123,8 @@
     <ClCompile Include="Source\Management\MainWindow.cpp">
       <Filter>Sources\Management</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Management\ObjectManager.cpp">
-      <Filter>Sources\Management</Filter>
+    <ClCompile Include="Source\Physics\RandomVelocityMaker.cpp">
+      <Filter>Sources\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
