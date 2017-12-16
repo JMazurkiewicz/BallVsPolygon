@@ -7,7 +7,7 @@
 namespace {
 
 	constexpr float BALL_RADIUS = 20;
-	constexpr float BALL_VELOCITY = 200;
+	constexpr float BALL_VELOCITY = 300;
 
 }
 

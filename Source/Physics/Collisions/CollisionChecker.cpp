@@ -35,9 +35,6 @@ bool CollisionChecker::didCollisionHappenWithSide(const LineSegment& side) const
 
 	return
 		side.getLine().getDistanceFromPoint(ballPosition) <= ball.getRadius() &&
-		(domainX.contains(ballPosition.x) ||
-		 (std::abs(ballPosition.x - domainX.begin()) <= ball.getRadius() && std::abs(ballPosition.y - domainY.begin()) <= ball.getRadius()) || 
-		 (std::abs(ballPosition.x - domainX.end()) <= ball.getRadius() && std::abs(ballPosition.y - domainY.end()) <= ball.getRadius())
-		 );
+		(domainX.contains(ballPosition.x) || domainY.contains(ballPosition.y));
 
 }
