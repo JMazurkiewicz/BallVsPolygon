@@ -7,7 +7,7 @@
 namespace {
 
 	constexpr float BALL_RADIUS = 20;
-	constexpr float BALL_VELOCITY = 150;
+	constexpr float BALL_VELOCITY = 200;
 
 }
 
@@ -40,14 +40,10 @@ bool Ball::isActive() const {
 
 void Ball::activate() {
 
-	if(!activity) {
+	RandomVelocityMaker velocityMaker(BALL_VELOCITY);
+	setVelocity(velocityMaker.makeVelocity());
 
-		RandomVelocityMaker velocityMaker(BALL_VELOCITY);
-		setVelocity(velocityMaker.makeVelocity());
-
-		activity = true;
-
-	}
+	activity = true;
 
 }
 

@@ -35,9 +35,13 @@ private:
 
 			} else if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {
 
-				timer.switchMode();
+				switchPause();
 
-			} 
+			} else if(event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+
+				setBallPositionToMousePosition();
+
+			}
 
 		}
 
@@ -50,11 +54,6 @@ private:
 		ball.update(ellapsedTime);
 		ball.bounceOnCollisionWith(polygon);
 
-		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-			ball.setPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
-			ball.activate();
-		}
-
 	}
 
 	void displayNewView() {
@@ -65,6 +64,21 @@ private:
 		window.draw(polygon);
 
 		window.display();
+
+	}
+	
+	void switchPause() {
+
+		timer.switchMode();
+
+	}
+	
+	void setBallPositionToMousePosition() {
+
+		const sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
+
+		ball.setPosition(mousePosition);
+		ball.activate();
 
 	}
 	

@@ -23,9 +23,6 @@
     <Filter Include="Sources\Physics\Collisions">
       <UniqueIdentifier>{a42c3216-4c9c-4589-aa7b-c97229a5bf79}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\GameState">
-      <UniqueIdentifier>{e95f10d6-ae50-4580-9f86-f83d5bb9e1dd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\Management">
       <UniqueIdentifier>{8b0f557e-8f37-4fd2-987e-052594985359}</UniqueIdentifier>
     </Filter>
@@ -78,9 +75,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\BallVsPolygon.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp">
       <Filter>Sources\ConvexShape</Filter>
     </ClCompile>
@@ -125,6 +119,9 @@
     </ClCompile>
     <ClCompile Include="Source\Physics\RandomVelocityMaker.cpp">
       <Filter>Sources\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BallVsPolygon.cpp">
+      <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
