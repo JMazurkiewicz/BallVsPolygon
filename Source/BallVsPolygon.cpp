@@ -1,3 +1,5 @@
+#include <cstdlib>
+#include <exception>
 #include "Management/MainWindow.h"
 #include "Objects/Ball.h"
 #include "Objects/Polygon.h"
@@ -92,7 +94,16 @@ private:
 
 int main() {
 
-	BallVsPolygon app;
-	app.run();
+	try {
+
+		BallVsPolygon app;
+		app.run();
+
+	} catch(const std::exception&) {
+
+		sf::err() << "Fatal error occured, application will be terminated";
+		return EXIT_FAILURE;
+
+	}
 
 }

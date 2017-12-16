@@ -28,12 +28,17 @@ void Polygon::loadPointsFromFile() {
 	try {
 
 		std::ifstream file("points.txt");
+
+		if(file.fail()) {
+			throw std::runtime_error("file \"points.txt\" doesn\'t exist");
+		}
+
 		file >> *this;
 
 	} catch(std::exception& e) {
 
 		sf::err() << "An error occurred during importing polygon from file:";
-		sf::err() << '\t\"' << e.what() << "\"\n";
+		sf::err() << " \"" << e.what() << "\"\n" << std::flush;
 		throw;
 
 	}
