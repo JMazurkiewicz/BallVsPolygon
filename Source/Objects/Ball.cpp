@@ -21,21 +21,22 @@ Ball::Ball() : activity(false) {
 }
 
 const Velocity& Ball::getVelocity() const {
-
 	return velocity;
-
 }
 
 void Ball::setVelocity(const Velocity& velocity) {
-
 	this->velocity = velocity;
+}
+
+sf::FloatRect Ball::makeRectangle() const {
+	
+	const sf::Vector2f radiusVector(getRadius(), getRadius());
+	return sf::FloatRect(getPosition() - radiusVector, 2.0f * radiusVector);
 
 }
 
 bool Ball::isActive() const {
-
 	return activity;
-
 }
 
 void Ball::activate() {

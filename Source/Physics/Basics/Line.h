@@ -7,9 +7,9 @@ class Line {
 public:
 
 	Line();
-	Line(const sf::Vector2f& first, const sf::Vector2f& second);
+	Line(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint);
 
-	void assignLinePassingThroughTwoPoints(const sf::Vector2f& first, const sf::Vector2f& second);
+	void assignLinePassingThroughTwoPoints(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint);
 
 	bool isParallelTo(const Line& other) const;
 
@@ -23,7 +23,7 @@ private:
 
 	float a, b, c;
 
-	void throwIfUnableToMakeALine(const sf::Vector2f& first, const sf::Vector2f& second) const;
+	void throwIfUnableToMakeALine(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint) const;
 	void throwIfHasNoCommonPoint(const Line& other) const;
 
 };

@@ -64,9 +64,6 @@
     <ClInclude Include="Source\Physics\Basics\LineSegment.h">
       <Filter>Sources\Physics\Basics</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Physics\Basics\ClosedInterval.h">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Management\MainWindow.h">
       <Filter>Sources\Management</Filter>
     </ClInclude>
@@ -109,9 +106,6 @@
       <Filter>Sources\Physics\Collisions</Filter>
     </ClCompile>
     <ClCompile Include="Source\Physics\Basics\LineSegment.cpp">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\Basics\ClosedInterval.cpp">
       <Filter>Sources\Physics\Basics</Filter>
     </ClCompile>
     <ClCompile Include="Source\Management\MainWindow.cpp">

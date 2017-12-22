@@ -13,6 +13,8 @@ public:
 	const Velocity& getVelocity() const;
 	void setVelocity(const Velocity& velocity);
 
+	sf::FloatRect makeRectangle() const;
+
 	bool isActive() const;
 	void activate();
 

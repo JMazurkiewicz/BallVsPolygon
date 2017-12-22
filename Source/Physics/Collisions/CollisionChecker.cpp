@@ -1,4 +1,3 @@
-#include <cmath>
 #include <cstddef>
 #include "Physics/Collisions/CollisionChecker.h"
 
@@ -30,11 +29,11 @@ Line CollisionChecker::getCollidedSide() const {
 bool CollisionChecker::didCollisionHappenWithSide(const LineSegment& side) const {
 
 	const sf::Vector2f ballPosition = ball.getPosition();
-	const ClosedInterval domainX = side.getDomainX();
-	const ClosedInterval domainY = side.getDomainY();
 
-	return
-		side.getLine().getDistanceFromPoint(ballPosition) <= ball.getRadius() &&
-		(domainX.contains(ballPosition.x) || domainY.contains(ballPosition.y));
+	const sf::FloatRect sideRectangle = side.makeRectangle();
+	const sf::FloatRect ballRectangle = ball.makeRectangle();
+
+	return (side.getLine().getDistanceFromPoint(ballPosition) <= ball.getRadius()) && sideRectangle.intersects(ballRectangle);
+
 
 }
