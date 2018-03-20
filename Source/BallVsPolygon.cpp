@@ -4,7 +4,7 @@
 #include "Display/MainWindow.h"
 #include "Objects/Ball.h"
 #include "Objects/Polygon.h"
-#include "Physics/Basics/Timer.h"
+#include "Physics/Timer.h"
 
 class BallVsPolygon {
 

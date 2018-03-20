@@ -1,4 +1,4 @@
-#include "Physics/Basics/Timer.h"
+#include "Timer.h"
 
 Timer::Timer() {
 	enable();

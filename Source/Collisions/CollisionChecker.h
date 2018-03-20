@@ -1,9 +1,9 @@
 #pragma once
 
+#include "Math/Line.h"
+#include "Math/LineSegment.h"
 #include "Objects/Ball.h"
 #include "Objects/Polygon.h"
-#include "Physics/Basics/Line.h"
-#include "Physics/Basics/LineSegment.h"
 
 class CollisionChecker {
 

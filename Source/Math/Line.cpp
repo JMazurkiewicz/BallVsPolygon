@@ -1,5 +1,6 @@
 #include <cmath>
-#include "Physics/Basics/Line.h"
+#include "Line.h"
+
 #include <stdexcept>
 
 Line::Line() : a(0), b(1), c(0) { }

@@ -1,5 +1,6 @@
-#include "Physics/AxialSymmetry.h"
-#include "Physics/Collisions/BallBouncer.h"
+#include "BallBouncer.h"
+
+#include "Math/AxialSymmetry.h"
 
 BallBouncer::BallBouncer(Ball& ball) : ball(ball) { }
 

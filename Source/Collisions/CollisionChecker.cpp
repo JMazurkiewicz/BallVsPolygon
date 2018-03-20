@@ -1,5 +1,6 @@
+#include "CollisionChecker.h"
+
 #include <cstddef>
-#include "Physics/Collisions/CollisionChecker.h"
 
 CollisionChecker::CollisionChecker(const Ball& ball) : ball(ball) { }
 

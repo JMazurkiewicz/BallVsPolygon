@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Physics/Basics/Line.h"
+#include "Math/Line.h"
 #include <SFML/Graphics.hpp>
 
 class AxialSymmetry {

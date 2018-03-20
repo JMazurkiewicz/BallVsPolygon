@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Objects/Polygon.h"
-#include "Physics/Basics/Velocity.h"
+#include "Physics/Velocity.h"
 #include <SFML/Graphics.hpp>
 
 class Ball : public sf::CircleShape {

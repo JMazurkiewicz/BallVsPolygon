@@ -37,27 +37,6 @@
     <ClInclude Include="Source\Objects\Polygon.h">
       <Filter>Sources\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Physics\AxialSymmetry.h">
-      <Filter>Sources\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Physics\Basics\Velocity.h">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Physics\Basics\Timer.h">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Physics\Basics\Line.h">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Physics\Collisions\BallBouncer.h">
-      <Filter>Sources\Physics\Collisions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Physics\Collisions\CollisionChecker.h">
-      <Filter>Sources\Physics\Collisions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Physics\Basics\LineSegment.h">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Physics\RandomVelocityMaker.h">
       <Filter>Sources\Physics</Filter>
     </ClInclude>
@@ -66,6 +45,27 @@
     </ClInclude>
     <ClInclude Include="Source\Display\MainWindow.h">
       <Filter>Sources\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Math\LineSegment.h">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Math\Line.h">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Math\AxialSymmetry.h">
+      <Filter>Sources\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Collisions\BallBouncer.h">
+      <Filter>Sources\Physics\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Collisions\CollisionChecker.h">
+      <Filter>Sources\Physics\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Velocity.h">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Timer.h">
+      <Filter>Sources\Physics\Basics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,27 +77,6 @@
     </ClCompile>
     <ClCompile Include="Source\Objects\Polygon.cpp">
       <Filter>Sources\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\AxialSymmetry.cpp">
-      <Filter>Sources\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\Basics\Velocity.cpp">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\Basics\Timer.cpp">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\Basics\Line.cpp">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\Collisions\BallBouncer.cpp">
-      <Filter>Sources\Physics\Collisions</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\Collisions\CollisionChecker.cpp">
-      <Filter>Sources\Physics\Collisions</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\Basics\LineSegment.cpp">
-      <Filter>Sources\Physics\Basics</Filter>
     </ClCompile>
     <ClCompile Include="Source\Physics\RandomVelocityMaker.cpp">
       <Filter>Sources\Physics</Filter>
@@ -113,6 +92,27 @@
     </ClCompile>
     <ClCompile Include="Source\Display\MainWindow.cpp">
       <Filter>Sources\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Math\Line.cpp">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Math\LineSegment.cpp">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Math\AxialSymmetry.cpp">
+      <Filter>Sources\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collisions\BallBouncer.cpp">
+      <Filter>Sources\Physics\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collisions\CollisionChecker.cpp">
+      <Filter>Sources\Physics\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Timer.cpp">
+      <Filter>Sources\Physics\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Velocity.cpp">
+      <Filter>Sources\Physics\Basics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

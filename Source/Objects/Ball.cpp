@@ -1,7 +1,7 @@
 #include <cstddef>
 #include "Objects/Ball.h"
-#include "Physics/Collisions/BallBouncer.h"
-#include "Physics/Collisions/CollisionChecker.h"
+#include "Collisions/BallBouncer.h"
+#include "Collisions/CollisionChecker.h"
 #include "Physics/RandomVelocityMaker.h"
 
 namespace {

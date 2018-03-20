@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Physics/Basics/Velocity.h"
+#include "Physics/Velocity.h"
 
 class RandomVelocityMaker {
 

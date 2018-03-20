@@ -1,4 +1,4 @@
-﻿#include "Physics/Basics/Velocity.h"
+﻿#include "Velocity.h"
 
 Velocity::Velocity(const sf::Vector2f& vector)
 	: sf::Vector2f(vector) { }

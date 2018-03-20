@@ -1,4 +1,4 @@
-#include "Physics/AxialSymmetry.h"
+#include "AxialSymmetry.h"
 
 AxialSymmetry::AxialSymmetry(const Line& axis)
 	: axis(axis.getParallelLinePassingThroughPoint(sf::Vector2f(0, 0))) { }

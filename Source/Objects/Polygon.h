@@ -2,7 +2,7 @@
 
 #include <cstddef>
 #include <istream>
-#include "Physics/Basics/LineSegment.h"
+#include "Math/LineSegment.h"
 #include <SFML/Graphics.hpp>
 
 class Polygon : public sf::ConvexShape {
