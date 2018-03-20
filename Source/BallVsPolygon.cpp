@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <exception>
-#include "Management/MainWindow.h"
+#include <iomanip>
+#include "Display/MainWindow.h"
 #include "Objects/Ball.h"
 #include "Objects/Polygon.h"
 #include "Physics/Basics/Timer.h"
@@ -8,6 +9,11 @@
 class BallVsPolygon {
 
 public:
+
+	BallVsPolygon() = default;
+
+	BallVsPolygon(const BallVsPolygon&) = delete;
+	BallVsPolygon& operator=(const BallVsPolygon&) = delete;
 
 	void run() {
 
@@ -99,9 +105,10 @@ int main() {
 		BallVsPolygon app;
 		app.run();
 
-	} catch(const std::exception&) {
+	} catch(const std::exception& e) {
 
-		sf::err() << "Fatal error occured, application will be terminated";
+		sf::err() << "Fatal error occured, application will be terminated\n";
+		sf::err() << "what(): " << std::quoted(e.what()) << '\n';
 		return EXIT_FAILURE;
 
 	}

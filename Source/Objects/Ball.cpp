@@ -75,7 +75,7 @@ void Ball::bounceOnCollisionWith(const Polygon& polygon) {
 void Ball::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 
 	if(isActive()) {
-		target.draw(static_cast<sf::CircleShape>(*this), states);
+		target.draw(static_cast<CircleShape>(*this), states);
 	}
 
 }

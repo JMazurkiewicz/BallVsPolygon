@@ -115,9 +115,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h" />
-    <ClInclude Include="Source\IO\ConvexShapeImporter.h" />
-    <ClInclude Include="Source\IO\VectorImporter.h" />
-    <ClInclude Include="Source\Management\MainWindow.h" />
+    <ClInclude Include="Source\IO\ConvexShapeImporting.h" />
+    <ClInclude Include="Source\Display\MainWindow.h" />
     <ClInclude Include="Source\Objects\Ball.h" />
     <ClInclude Include="Source\Objects\Polygon.h" />
     <ClInclude Include="Source\Physics\AxialSymmetry.h" />
@@ -132,9 +131,9 @@
   <ItemGroup>
     <ClCompile Include="Source\BallVsPolygon.cpp" />
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp" />
-    <ClCompile Include="Source\IO\ConvexShapeImporter.cpp" />
-    <ClCompile Include="Source\IO\VectorImporter.cpp" />
-    <ClCompile Include="Source\Management\MainWindow.cpp" />
+    <ClCompile Include="Source\IO\ConvexShapeImporting.cpp" />
+    <ClCompile Include="Source\IO\VectorImporting.cpp" />
+    <ClCompile Include="Source\Display\MainWindow.cpp" />
     <ClCompile Include="Source\Objects\Ball.cpp" />
     <ClCompile Include="Source\Objects\Polygon.cpp" />
     <ClCompile Include="Source\Physics\AxialSymmetry.cpp" />

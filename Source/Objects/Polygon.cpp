@@ -1,16 +1,13 @@
-#include <exception>
+#include "Polygon.h"
+
 #include <fstream>
-#include "IO/ConvexShapeImporter.h"
-#include "Objects/Polygon.h"
+#include "IO/ConvexShapeImporting.h"
+#include <stdexcept>
 
 Polygon::Polygon() {
 
 	loadPointsFromFile();
-
-	setFillColor(sf::Color(0, 0, 0, 0));
-
-	setOutlineColor(sf::Color::White);
-	setOutlineThickness(1);
+	makePolygonStyle();
 
 }
 
@@ -25,22 +22,21 @@ LineSegment Polygon::getSide(std::size_t index) const {
 
 void Polygon::loadPointsFromFile() {
 
-	try {
+	std::ifstream file("points.txt");
 
-		std::ifstream file("points.txt");
-
-		if(file.fail()) {
-			throw std::runtime_error("file \"points.txt\" doesn\'t exist");
-		}
-
-		file >> *this;
-
-	} catch(std::exception& e) {
-
-		sf::err() << "An error occurred during importing polygon from file:";
-		sf::err() << " \"" << e.what() << "\"\n" << std::flush;
-		throw;
-
+	if(!file.is_open()) {
+		throw std::ios_base::failure("file \"points.txt\" doesn\'t exist");
 	}
+
+	file >> *this;
+
+}
+
+void Polygon::makePolygonStyle() {
+
+	setFillColor(sf::Color{0, 0, 0, 0});
+
+	setOutlineColor(sf::Color::White);
+	setOutlineThickness(1.0F);
 
 }

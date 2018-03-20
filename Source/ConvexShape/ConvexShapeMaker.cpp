@@ -1,11 +1,12 @@
-#include "ConvexShape/ConvexShapeMaker.h"
-#include <cstddef>
+#include "ConvexShapeMaker.h"
+
 #include <stdexcept>
 
-ConvexShapeMaker::ConvexShapeMaker(const std::vector<sf::Vector2f>& points)
-	: points(points) {
+ConvexShapeMaker::ConvexShapeMaker(const std::vector<sf::Vector2f>& points) : points(points) {
 
-	throwIfPointCountIsTooSmall();
+	if(points.size() < 3) {
+		throwBecausePointCountIsTooSmall();
+	}
 
 }
 
@@ -13,18 +14,21 @@ sf::ConvexShape ConvexShapeMaker::makeConvexShape() const {
 	
 	sf::ConvexShape shape(points.size());
 	
-	for(std::size_t i = 0; i < points.size(); ++i) {
-		shape.setPoint(i, points[i]);
+	for(std::size_t index = 0; index < points.size(); ++index) {
+		shape.setPoint(index, points[index]);
 	}
 
 	return shape;
 
 }
 
-void ConvexShapeMaker::throwIfPointCountIsTooSmall() const {
+void ConvexShapeMaker::throwBecausePointCountIsTooSmall() const {
 
-	if(points.size() < 3) {
-		throw std::logic_error("too little points were given");
-	}
+	using namespace std::string_literals;
+
+	throw std::runtime_error(
+		static_cast<char>('0' + points.size()) +
+		" point(s) were given to ConvexShapeMaker (at least 3 points are required)"s
+	);
 
 }
