@@ -12,7 +12,7 @@ bool CollisionChecker::didCollisionHappenWith(const Polygon& polygon) {
 
 		if(didCollisionHappenWithSide(side)) {
 
-			collidedSide = side;
+			collidedSide = side.getLine();
 			return true;
 			
 		}

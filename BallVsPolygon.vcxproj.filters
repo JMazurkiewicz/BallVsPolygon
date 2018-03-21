@@ -67,6 +67,7 @@
     <ClInclude Include="Source\Physics\Timer.h">
       <Filter>Sources\Physics\Basics</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Math\Pi.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp">

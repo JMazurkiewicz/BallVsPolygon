@@ -4,9 +4,13 @@ Timer::Timer() {
 	enable();
 }
 
+void Timer::restart() {
+	lastStop = Clock::now();
+}
+
 void Timer::enable() {
-	restart();
 	isEnabled = true;
+	restart();
 }
 
 void Timer::disable() {
@@ -23,24 +27,19 @@ void Timer::switchMode() {
 
 }
 
-void Timer::restart() {
-	lastStop = Clock::now();
-}
-
 float Timer::getEllapsedTime() {
 
-	if(isEnabled) {
-
-		Clock::time_point nextStop = Clock::now();
-
-		using namespace std::chrono;
-		duration<float> ellapsedTime = duration_cast<duration<float>>(nextStop-lastStop);
-
-		lastStop = nextStop;
-		return ellapsedTime.count();
-
+	if(!isEnabled) {
+		return 0.0F;
 	}
 
-	return 0.0f;
+	TimePoint nextStop = Clock::now();
+
+	auto ellapsedTime = std::chrono::duration_cast<std::chrono::duration<float>>(
+		nextStop - lastStop
+	);
+
+	lastStop = nextStop;
+	return ellapsedTime.count();
 
 }

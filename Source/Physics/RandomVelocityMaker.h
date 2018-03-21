@@ -6,14 +6,11 @@ class RandomVelocityMaker {
 
 public:
 
-	RandomVelocityMaker(float velocityValue);
+	explicit RandomVelocityMaker(float velocityValue);
 
 	Velocity makeVelocity();
 
 private:
-
-	float makeXCoordinate();
-	float makeYCoordinate(float x);
 
 	const float velocityValue;
 

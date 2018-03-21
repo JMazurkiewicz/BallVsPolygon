@@ -7,7 +7,8 @@ class AxialSymmetry {
 
 public:
 
-	AxialSymmetry(const Line& axis);
+	explicit AxialSymmetry(const Line& axis);
+
 	sf::Vector2f getSymmetricalVector(const sf::Vector2f& vector);
 
 private:

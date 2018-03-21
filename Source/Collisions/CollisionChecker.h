@@ -9,7 +9,7 @@ class CollisionChecker {
 
 public:
 
-	CollisionChecker(const Ball& ball);
+	explicit CollisionChecker(const Ball& ball);
 
 	bool didCollisionHappenWith(const Polygon& polygon);
 	Line getCollidedSide() const;

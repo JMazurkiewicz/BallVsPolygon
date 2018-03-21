@@ -1,26 +1,23 @@
-#include <cmath>
 #include "Line.h"
 
+#include <cmath>
 #include <stdexcept>
 
 Line::Line() : a(0), b(1), c(0) { }
 
 Line::Line(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint) {
-
 	assignLinePassingThroughTwoPoints(firstPoint, secondPoint);
-
 }
 
 void Line::assignLinePassingThroughTwoPoints(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint) {
 
-	throwIfUnableToMakeALine(firstPoint, secondPoint);
+	if(firstPoint == secondPoint) {
+		throwBecausePointsAreNotOnOneLine();
+	}
 
-	const float d = (secondPoint.x - firstPoint.x);
-	const float e = (secondPoint.y - firstPoint.y);
-
-	a = -e;
-	b = d;
-	c = e*firstPoint.x - d*firstPoint.y;
+	a = secondPoint.y - firstPoint.y;
+	b = firstPoint.x - secondPoint.x;
+	c = secondPoint.x*firstPoint.y - firstPoint.x*secondPoint.y;
 	 
 }
 
@@ -30,9 +27,11 @@ bool Line::isParallelTo(const Line& other) const {
 
 }
 
-sf::Vector2f Line::getCommonPoint(const Line& other) const {
+sf::Vector2f Line::getCommonPointWith(const Line& other) const {
 
-	throwIfHasNoCommonPoint(other);
+	if(isParallelTo(other)) {
+		throwBecauseLinesHaveNoCommonPoint(other);
+	}
 
 	const float ab = a*other.b - other.a*b;
 	const float bc = b*other.c - other.b*c;
@@ -72,22 +71,22 @@ Line Line::getPerpendicularLinePassingThroughPoint(const sf::Vector2f& point) co
 
 }
 
-void Line::throwIfUnableToMakeALine(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint) const {
+void Line::throwBecausePointsAreNotOnOneLine() const {
 
-	if(firstPoint == secondPoint) {
-		throw std::logic_error("unable to make a line from given points");
-	}
+	throw std::logic_error("unable to make a line from given points (they are not on one line)");
 
 }
 
-void Line::throwIfHasNoCommonPoint(const Line& other) const {
+void Line::throwBecauseLinesHaveNoCommonPoint(const Line& other) const {
 
-	if(isParallelTo(other)) {
-		if(c == other.c) {
-			throw std::logic_error("lines are the same");
-		} else {
-			throw std::logic_error("lines don't intersect");
-		}
+	const char* message;
+
+	if(c == other.c) {
+		message = "lines are the same";
+	} else {
+		message = "lines don't intersect";
 	}
+
+	throw std::logic_error(message);
 
 }

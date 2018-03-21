@@ -7,19 +7,21 @@ class Timer {
 public:
 
 	using Clock = std::chrono::high_resolution_clock;
+	using TimePoint = Clock::time_point;
 
 	Timer();
+
+	void restart();
 
 	void enable();
 	void disable();
 	void switchMode();
 
-	void restart();
 	float getEllapsedTime();
 
 private:
 
-	Clock::time_point lastStop;
+	TimePoint lastStop;
 	bool isEnabled;
 
 };

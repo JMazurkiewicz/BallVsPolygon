@@ -117,6 +117,7 @@
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h" />
     <ClInclude Include="Source\IO\ConvexShapeImporting.h" />
     <ClInclude Include="Source\Display\MainWindow.h" />
+    <ClInclude Include="Source\Math\Pi.h" />
     <ClInclude Include="Source\Objects\Ball.h" />
     <ClInclude Include="Source\Objects\Polygon.h" />
     <ClInclude Include="Source\Math\AxialSymmetry.h" />

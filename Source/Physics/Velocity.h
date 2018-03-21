@@ -11,6 +11,6 @@ public:
 	Velocity() = default;
 	Velocity(const sf::Vector2f& vector);
 
-	sf::Vector2f getDistanceVector(float time);
+	sf::Vector2f getDistanceVector(float time) const;
 
 };
