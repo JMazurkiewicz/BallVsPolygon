@@ -19,15 +19,13 @@ const sf::Vector2f& LineSegment::getSecondPoint() const {
 }
 
 sf::FloatRect LineSegment::makeRectangle() const {
-	
-	const float width = std::abs(getFirstPoint().x - getSecondPoint().x);
-	const float height = std::abs(getFirstPoint().y - getSecondPoint().y);
 
-	return sf::FloatRect(
-		std::min(getFirstPoint().x, getSecondPoint().x),				 
-		std::min(getFirstPoint().y, getSecondPoint().y),
-		width,
-		height
-	);
+	const float left = std::min(getFirstPoint().x, getSecondPoint().x);
+	const float top = std::min(getFirstPoint().y, getSecondPoint().y);
+
+	const float width = std::abs(getFirstPoint().x - getSecondPoint().x) + 1.0F;
+	const float height = std::abs(getFirstPoint().y - getSecondPoint().y) + 1.0F;
+
+	return sf::FloatRect{left, top, width, height};
 
 }

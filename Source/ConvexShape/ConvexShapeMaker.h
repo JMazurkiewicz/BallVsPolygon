@@ -7,7 +7,7 @@ class ConvexShapeMaker {
 
 public:
 
-	ConvexShapeMaker(const std::vector<sf::Vector2f>& points);
+	explicit ConvexShapeMaker(const std::vector<sf::Vector2f>& points);
 
 	sf::ConvexShape makeConvexShape() const;
 

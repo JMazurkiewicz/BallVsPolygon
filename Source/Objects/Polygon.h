@@ -1,7 +1,6 @@
 #pragma once
 
 #include <cstddef>
-#include <istream>
 #include "Math/LineSegment.h"
 #include <SFML/Graphics.hpp>
 
@@ -16,6 +15,6 @@ public:
 private:
 
 	void loadPointsFromFile();
-	void makePolygonStyle();
+	void initPolygonStyle();
 
 };

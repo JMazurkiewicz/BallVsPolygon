@@ -40,9 +40,6 @@
     <ClInclude Include="Source\Physics\RandomVelocityMaker.h">
       <Filter>Sources\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="Source\IO\ConvexShapeImporting.h">
-      <Filter>Sources\IO</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Display\MainWindow.h">
       <Filter>Sources\Display</Filter>
     </ClInclude>
@@ -68,6 +65,10 @@
       <Filter>Sources\Physics\Basics</Filter>
     </ClInclude>
     <ClInclude Include="Source\Math\Pi.h" />
+    <ClInclude Include="Source\IO\ConvexShapeSerializer.h" />
+    <ClInclude Include="Source\IO\Vector2fSerializer.h">
+      <Filter>Sources\IO</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp">
@@ -84,12 +85,6 @@
     </ClCompile>
     <ClCompile Include="Source\BallVsPolygon.cpp">
       <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\IO\ConvexShapeImporting.cpp">
-      <Filter>Sources\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\IO\VectorImporting.cpp">
-      <Filter>Sources\IO</Filter>
     </ClCompile>
     <ClCompile Include="Source\Display\MainWindow.cpp">
       <Filter>Sources\Display</Filter>
@@ -114,6 +109,12 @@
     </ClCompile>
     <ClCompile Include="Source\Physics\Velocity.cpp">
       <Filter>Sources\Physics\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IO\Vector2fSerializer.cpp">
+      <Filter>Sources\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IO\ConvexShapeSerializer.cpp">
+      <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

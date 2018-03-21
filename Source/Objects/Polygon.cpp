@@ -1,14 +1,12 @@
 #include "Polygon.h"
 
 #include <fstream>
-#include "IO/ConvexShapeImporting.h"
+#include "IO/ConvexShapeSerializer.h"
 #include <stdexcept>
 
 Polygon::Polygon() {
-
 	loadPointsFromFile();
-	makePolygonStyle();
-
+	initPolygonStyle();
 }
 
 LineSegment Polygon::getSide(std::size_t index) const {
@@ -23,16 +21,14 @@ LineSegment Polygon::getSide(std::size_t index) const {
 void Polygon::loadPointsFromFile() {
 
 	std::ifstream file("points.txt");
+	file.exceptions(std::ios_base::failbit);
 
-	if(!file.is_open()) {
-		throw std::ios_base::failure("file \"points.txt\" doesn\'t exist");
-	}
-
-	file >> *this;
+	ConvexShapeSerializer shapeSerializer(file);
+	shapeSerializer.serialize(*this);
 
 }
 
-void Polygon::makePolygonStyle() {
+void Polygon::initPolygonStyle() {
 
 	setFillColor(sf::Color{0, 0, 0, 0});
 

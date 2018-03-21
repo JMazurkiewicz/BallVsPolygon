@@ -21,7 +21,7 @@ public:
 
 		while(window.isOpen()) {
 
-			checkEvents();
+			listenForEvents();
 			updateObjects();
 			displayNewView();
 
@@ -31,11 +31,9 @@ public:
 
 private:
 
-	void checkEvents() {
+	void listenForEvents() {
 
-		sf::Event event;
-
-		while(window.pollEvent(event)) {
+		for(sf::Event event; window.pollEvent(event); ) {
 
 			if(event.type == sf::Event::Closed) {
 
@@ -57,9 +55,9 @@ private:
 
 	void updateObjects() {
 
-		const float ellapsedTime = timer.getEllapsedTime();
+		const Timer::Seconds ellapsedTime = timer.getEllapsedTime();
 
-		ball.update(ellapsedTime);
+		ball.update(ellapsedTime.count());
 		ball.bounceOnCollisionWith(polygon);
 
 	}
@@ -76,9 +74,7 @@ private:
 	}
 	
 	void switchPause() {
-
 		timer.switchMode();
-
 	}
 	
 	void setBallPositionToMousePosition() {

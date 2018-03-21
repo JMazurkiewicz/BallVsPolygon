@@ -115,7 +115,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h" />
-    <ClInclude Include="Source\IO\ConvexShapeImporting.h" />
+    <ClInclude Include="Source\IO\ConvexShapeSerializer.h" />
+    <ClInclude Include="Source\IO\Vector2fSerializer.h" />
     <ClInclude Include="Source\Display\MainWindow.h" />
     <ClInclude Include="Source\Math\Pi.h" />
     <ClInclude Include="Source\Objects\Ball.h" />
@@ -132,8 +133,8 @@
   <ItemGroup>
     <ClCompile Include="Source\BallVsPolygon.cpp" />
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp" />
-    <ClCompile Include="Source\IO\ConvexShapeImporting.cpp" />
-    <ClCompile Include="Source\IO\VectorImporting.cpp" />
+    <ClCompile Include="Source\IO\ConvexShapeSerializer.cpp" />
+    <ClCompile Include="Source\IO\Vector2fSerializer.cpp" />
     <ClCompile Include="Source\Display\MainWindow.cpp" />
     <ClCompile Include="Source\Objects\Ball.cpp" />
     <ClCompile Include="Source\Objects\Polygon.cpp" />

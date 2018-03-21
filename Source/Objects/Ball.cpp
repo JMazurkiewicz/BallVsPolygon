@@ -51,7 +51,7 @@ void Ball::activate() {
 void Ball::update(float time) {
 
 	if(isActive()) {
-		move(velocity.getDistanceVector(time));
+		move(velocity.calculateDistanceVector(time));
 	}
 
 }
