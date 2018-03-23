@@ -118,7 +118,7 @@
     <ClInclude Include="Source\Serialization\ConvexShapeSerializer.h" />
     <ClInclude Include="Source\Serialization\Vector2fSerializer.h" />
     <ClInclude Include="Source\Display\MainWindow.h" />
-    <ClInclude Include="Source\Math\Pi.h" />
+    <ClInclude Include="Source\Math\Constants.h" />
     <ClInclude Include="Source\Objects\Ball.h" />
     <ClInclude Include="Source\Objects\Polygon.h" />
     <ClInclude Include="Source\Math\AxialSymmetry.h" />
@@ -126,7 +126,6 @@
     <ClInclude Include="Source\Physics\Timer.h" />
     <ClInclude Include="Source\Math\Line.h" />
     <ClInclude Include="Source\Physics\Velocity.h" />
-    <ClInclude Include="Source\Collisions\BallBouncer.h" />
     <ClInclude Include="Source\Collisions\CollisionChecker.h" />
     <ClInclude Include="Source\Physics\RandomVelocityGenerator.h" />
   </ItemGroup>
@@ -143,7 +142,6 @@
     <ClCompile Include="Source\Physics\Timer.cpp" />
     <ClCompile Include="Source\Math\Line.cpp" />
     <ClCompile Include="Source\Physics\Velocity.cpp" />
-    <ClCompile Include="Source\Collisions\BallBouncer.cpp" />
     <ClCompile Include="Source\Collisions\CollisionChecker.cpp" />
     <ClCompile Include="Source\Physics\RandomVelocityGenerator.cpp" />
   </ItemGroup>

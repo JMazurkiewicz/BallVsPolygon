@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Math/Line.h"
-#include <SFML/System.hpp>
+#include <SFML/System/Vector2.hpp>
 
 class AxialSymmetry {
 

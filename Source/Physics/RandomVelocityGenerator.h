@@ -9,7 +9,7 @@ public:
 
 	explicit RandomVelocityGenerator(float velocityValue);
 
-	Velocity generateVelocity();
+	Velocity generate();
 
 private:
 

@@ -82,7 +82,8 @@ private:
 		const sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 
 		ball.setPosition(mousePosition);
-		ball.activate();
+		ball.randomizeVelocityVector();
+		ball.enable();
 
 	}
 	

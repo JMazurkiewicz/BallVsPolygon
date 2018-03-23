@@ -49,9 +49,6 @@
     <ClInclude Include="Source\Math\AxialSymmetry.h">
       <Filter>Sources\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Collisions\BallBouncer.h">
-      <Filter>Sources\Physics\Collisions</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Collisions\CollisionChecker.h">
       <Filter>Sources\Physics\Collisions</Filter>
     </ClInclude>
@@ -61,7 +58,6 @@
     <ClInclude Include="Source\Physics\Timer.h">
       <Filter>Sources\Physics\Basics</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Math\Pi.h" />
     <ClInclude Include="Source\Serialization\ConvexShapeSerializer.h" />
     <ClInclude Include="Source\Serialization\Vector2fSerializer.h">
       <Filter>Sources\IO</Filter>
@@ -69,6 +65,7 @@
     <ClInclude Include="Source\Physics\RandomVelocityGenerator.h">
       <Filter>Sources\Physics</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Math\Constants.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp">
@@ -94,9 +91,6 @@
     </ClCompile>
     <ClCompile Include="Source\Math\AxialSymmetry.cpp">
       <Filter>Sources\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Collisions\BallBouncer.cpp">
-      <Filter>Sources\Physics\Collisions</Filter>
     </ClCompile>
     <ClCompile Include="Source\Collisions\CollisionChecker.cpp">
       <Filter>Sources\Physics\Collisions</Filter>

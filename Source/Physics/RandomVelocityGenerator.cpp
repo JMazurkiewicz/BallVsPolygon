@@ -1,14 +1,14 @@
 #include "RandomVelocityGenerator.h"
 
 #include <cmath>
-#include "Math/Pi.h"
+#include "Math/Constants.h"
 
 std::mt19937 RandomVelocityGenerator::generator(std::random_device{}());
 
 RandomVelocityGenerator::RandomVelocityGenerator(float velocityValue)
 	: velocityValue(velocityValue) { }
 
-Velocity RandomVelocityGenerator::generateVelocity() {
+Velocity RandomVelocityGenerator::generate() {
 	
 	std::uniform_real_distribution<float> angleDistribtion(0, 2 * Math::PI);
 	const float angle = angleDistribtion(generator);

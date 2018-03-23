@@ -1,21 +1,21 @@
-#include <cstddef>
-#include "Objects/Ball.h"
-#include "Collisions/BallBouncer.h"
+#include "Ball.h"
+
 #include "Collisions/CollisionChecker.h"
+#include "Math/AxialSymmetry.h"
 #include "Physics/RandomVelocityGenerator.h"
 
 namespace {
 
-	constexpr float BALL_RADIUS = 20;
-	constexpr float BALL_VELOCITY = 300;
+	constexpr float BALL_RADIUS = 20.0F;
+	constexpr float BALL_VELOCITY = 300.0F;
 
 }
 
-Ball::Ball() : activity(false) {
+Ball::Ball() : enabled(false) {
+
+	setFillColor(sf::Color(150, 120, 100));
 
 	setRadius(BALL_RADIUS);
-	setFillColor(sf::Color(91, 155, 102));
-
 	setOrigin(BALL_RADIUS, BALL_RADIUS);
 
 }
@@ -29,28 +29,31 @@ void Ball::setVelocity(const Velocity& velocity) {
 }
 
 sf::FloatRect Ball::makeRectangle() const {
-	
-	const sf::Vector2f radiusVector(getRadius(), getRadius());
-	return sf::FloatRect(getPosition() - radiusVector, 2.0f * radiusVector);
+
+	const sf::Vector2f cornerVector(BALL_RADIUS, BALL_RADIUS);
+
+	return sf::FloatRect(getPosition() - cornerVector, 2.0F * cornerVector);
 
 }
 
-bool Ball::isActive() const {
-	return activity;
+bool Ball::isEnabled() const {
+	return enabled;
 }
 
-void Ball::activate() {
+void Ball::enable() {
+	enabled = true;
+}
 
-	RandomVelocityGenerator velocityMaker(BALL_VELOCITY);
-	setVelocity(velocityMaker.generateVelocity());
+void Ball::randomizeVelocityVector() {
 
-	activity = true;
+	RandomVelocityGenerator velocityGenerator(BALL_VELOCITY);
+	setVelocity(velocityGenerator.generate());
 
 }
 
 void Ball::update(float time) {
 
-	if(isActive()) {
+	if(isEnabled()) {
 		move(velocity.calculateDistanceVector(time));
 	}
 
@@ -58,15 +61,15 @@ void Ball::update(float time) {
 
 void Ball::bounceOnCollisionWith(const Polygon& polygon) {
 
-	if(isActive()) {
+	if(!isEnabled()) {
+		return;
+	}
 
-		CollisionChecker collisionChecker(*this);
-		if(collisionChecker.didCollisionHappenWith(polygon)) {
+	CollisionChecker collisionChecker(*this);
 
-			BallBouncer ballBouncer(*this);
-			ballBouncer.bounceFrom(collisionChecker.getCollidedSide());
+	if(collisionChecker.didCollisionHappenWith(polygon)) {
 
-		}
+		bounceFromSide(collisionChecker.getCollidedSide());
 
 	}
 
@@ -74,8 +77,20 @@ void Ball::bounceOnCollisionWith(const Polygon& polygon) {
 
 void Ball::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 
-	if(isActive()) {
-		target.draw(static_cast<CircleShape>(*this), states);
+	if(isEnabled()) {
+		target.draw(static_cast<sf::CircleShape>(*this), states);
 	}
+
+}
+
+void Ball::bounceFromSide(const Line& side) {
+
+	AxialSymmetry symmetry(side);
+
+	const Velocity symmetricalVelocity(
+		symmetry.getSymmetricalVector(getVelocity())
+	);
+
+	setVelocity(symmetricalVelocity);
 
 }

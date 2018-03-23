@@ -2,7 +2,7 @@
 
 #include "Objects/Polygon.h"
 #include "Physics/Velocity.h"
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
 
 class Ball : public sf::CircleShape {
 
@@ -15,8 +15,10 @@ public:
 
 	sf::FloatRect makeRectangle() const;
 
-	bool isActive() const;
-	void activate();
+	bool isEnabled() const;
+	void enable();
+
+	void randomizeVelocityVector();
 
 	void update(float time);
 	void bounceOnCollisionWith(const Polygon& polygon);
@@ -24,7 +26,9 @@ public:
 
 private:
 
+	void bounceFromSide(const Line& side);
+
 	Velocity velocity;
-	bool activity;
+	bool enabled;
 
 };
