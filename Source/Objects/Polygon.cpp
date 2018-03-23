@@ -1,20 +1,26 @@
 #include "Polygon.h"
 
 #include <fstream>
-#include "IO/ConvexShapeSerializer.h"
+#include "Serialization/ConvexShapeSerializer.h"
 #include <stdexcept>
 
 Polygon::Polygon() {
+
 	loadPointsFromFile();
 	initPolygonStyle();
+
 }
 
 LineSegment Polygon::getSide(std::size_t index) const {
 
-	const std::size_t beginIndex = index;
-	const std::size_t endIndex = (index + 1 == getPointCount()) ? (0) : (index + 1);
+	if(index >= getPointCount()) {
+		throwBecauseIndexIsInvalid();
+	}
 
-	return LineSegment(getPoint(beginIndex), getPoint(endIndex));
+	const std::size_t firstPointIndex = index;
+	const std::size_t secondPointIndex = (index + 1 == getPointCount()) ? (0) : (index + 1);
+
+	return LineSegment(getPoint(firstPointIndex), getPoint(secondPointIndex));
 
 }
 
@@ -35,4 +41,8 @@ void Polygon::initPolygonStyle() {
 	setOutlineColor(sf::Color::White);
 	setOutlineThickness(1.0F);
 
+}
+
+void Polygon::throwBecauseIndexIsInvalid() const {
+	throw std::out_of_range("Polygon::getSide(): invalid index");
 }

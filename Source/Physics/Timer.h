@@ -12,6 +12,8 @@ public:
 
 	Timer();
 
+	bool isEnabled() const;
+
 	void restart();
 
 	void switchMode();
@@ -22,7 +24,7 @@ public:
 
 private:
 
-	TimePoint lastStop;
-	bool isEnabled;
+	TimePoint stop;
+	bool enabled;
 
 };

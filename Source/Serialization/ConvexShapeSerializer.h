@@ -1,7 +1,7 @@
 #pragma once
 
-#include "IO/Vector2fSerializer.h"
 #include <istream>
+#include "Serialization/Vector2fSerializer.h"
 #include <SFML/Graphics.hpp>
 #include <vector>
 

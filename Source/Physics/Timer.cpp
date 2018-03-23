@@ -4,13 +4,17 @@ Timer::Timer() {
 	enable();
 }
 
+bool Timer::isEnabled() const {
+	return enabled;
+}
+
 void Timer::restart() {
-	lastStop = Clock::now();
+	stop = Clock::now();
 }
 
 void Timer::switchMode() {
 
-	if(isEnabled) {
+	if(isEnabled()) {
 		disable();
 	} else {
 		enable();
@@ -20,27 +24,27 @@ void Timer::switchMode() {
 
 void Timer::enable() {
 	
-	if(!isEnabled) {
-		isEnabled = true;
+	if(!isEnabled()) {
+		enabled = true;
 		restart();
 	}
 
 }
 
 void Timer::disable() {
-	isEnabled = false;
+	enabled = false;
 }
 
 Timer::Seconds Timer::getEllapsedTime() {
 
-	if(!isEnabled) {
+	if(!isEnabled()) {
 		return Seconds{};
 	}
 
 	const TimePoint nextStop = Clock::now();
-	const Seconds ellapsedTime = std::chrono::duration_cast<Seconds>(nextStop - lastStop);
+	const Seconds ellapsedTime = std::chrono::duration_cast<Seconds>(nextStop - stop);
 
-	lastStop = nextStop;
+	stop = nextStop;
 	return ellapsedTime;
 
 }

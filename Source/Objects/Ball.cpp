@@ -2,7 +2,7 @@
 #include "Objects/Ball.h"
 #include "Collisions/BallBouncer.h"
 #include "Collisions/CollisionChecker.h"
-#include "Physics/RandomVelocityMaker.h"
+#include "Physics/RandomVelocityGenerator.h"
 
 namespace {
 
@@ -41,8 +41,8 @@ bool Ball::isActive() const {
 
 void Ball::activate() {
 
-	RandomVelocityMaker velocityMaker(BALL_VELOCITY);
-	setVelocity(velocityMaker.makeVelocity());
+	RandomVelocityGenerator velocityMaker(BALL_VELOCITY);
+	setVelocity(velocityMaker.generateVelocity());
 
 	activity = true;
 

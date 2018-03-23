@@ -20,7 +20,7 @@ private:
 
 	Line line;
 
-	sf::Vector2f firstPoint;
-	sf::Vector2f secondPoint;
+	const sf::Vector2f firstPoint;
+	const sf::Vector2f secondPoint;
 
 };

@@ -8,10 +8,10 @@ void BallBouncer::bounceFrom(const Line& line) {
 
 	AxialSymmetry symmetry(line);
 
-	const Velocity newVelocity{symmetry.getSymmetricalVector(
-		static_cast<sf::Vector2f>(ball.getVelocity())
-	)};
+	const Velocity symmetricalVelocity(
+		symmetry.getSymmetricalVector(ball.getVelocity())
+	);
 
-	ball.setVelocity(newVelocity);
+	ball.setVelocity(symmetricalVelocity);
 
 }

@@ -1,3 +1,7 @@
 #pragma once
 
-constexpr float PI = 3.141592F;
+namespace Math {
+
+	constexpr float PI = 3.141592F;
+
+}

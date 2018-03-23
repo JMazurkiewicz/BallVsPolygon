@@ -115,8 +115,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h" />
-    <ClInclude Include="Source\IO\ConvexShapeSerializer.h" />
-    <ClInclude Include="Source\IO\Vector2fSerializer.h" />
+    <ClInclude Include="Source\Serialization\ConvexShapeSerializer.h" />
+    <ClInclude Include="Source\Serialization\Vector2fSerializer.h" />
     <ClInclude Include="Source\Display\MainWindow.h" />
     <ClInclude Include="Source\Math\Pi.h" />
     <ClInclude Include="Source\Objects\Ball.h" />
@@ -128,13 +128,13 @@
     <ClInclude Include="Source\Physics\Velocity.h" />
     <ClInclude Include="Source\Collisions\BallBouncer.h" />
     <ClInclude Include="Source\Collisions\CollisionChecker.h" />
-    <ClInclude Include="Source\Physics\RandomVelocityMaker.h" />
+    <ClInclude Include="Source\Physics\RandomVelocityGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BallVsPolygon.cpp" />
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp" />
-    <ClCompile Include="Source\IO\ConvexShapeSerializer.cpp" />
-    <ClCompile Include="Source\IO\Vector2fSerializer.cpp" />
+    <ClCompile Include="Source\Serialization\ConvexShapeSerializer.cpp" />
+    <ClCompile Include="Source\Serialization\Vector2fSerializer.cpp" />
     <ClCompile Include="Source\Display\MainWindow.cpp" />
     <ClCompile Include="Source\Objects\Ball.cpp" />
     <ClCompile Include="Source\Objects\Polygon.cpp" />
@@ -145,7 +145,7 @@
     <ClCompile Include="Source\Physics\Velocity.cpp" />
     <ClCompile Include="Source\Collisions\BallBouncer.cpp" />
     <ClCompile Include="Source\Collisions\CollisionChecker.cpp" />
-    <ClCompile Include="Source\Physics\RandomVelocityMaker.cpp" />
+    <ClCompile Include="Source\Physics\RandomVelocityGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -17,4 +17,7 @@ private:
 	void loadPointsFromFile();
 	void initPolygonStyle();
 
+	[[noreturn]]
+	void throwBecauseIndexIsInvalid() const;
+
 };

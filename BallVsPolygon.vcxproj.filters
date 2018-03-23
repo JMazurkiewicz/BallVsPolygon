@@ -37,9 +37,6 @@
     <ClInclude Include="Source\Objects\Polygon.h">
       <Filter>Sources\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Physics\RandomVelocityMaker.h">
-      <Filter>Sources\Physics</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Display\MainWindow.h">
       <Filter>Sources\Display</Filter>
     </ClInclude>
@@ -65,9 +62,12 @@
       <Filter>Sources\Physics\Basics</Filter>
     </ClInclude>
     <ClInclude Include="Source\Math\Pi.h" />
-    <ClInclude Include="Source\IO\ConvexShapeSerializer.h" />
-    <ClInclude Include="Source\IO\Vector2fSerializer.h">
+    <ClInclude Include="Source\Serialization\ConvexShapeSerializer.h" />
+    <ClInclude Include="Source\Serialization\Vector2fSerializer.h">
       <Filter>Sources\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\RandomVelocityGenerator.h">
+      <Filter>Sources\Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -79,9 +79,6 @@
     </ClCompile>
     <ClCompile Include="Source\Objects\Polygon.cpp">
       <Filter>Sources\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\RandomVelocityMaker.cpp">
-      <Filter>Sources\Physics</Filter>
     </ClCompile>
     <ClCompile Include="Source\BallVsPolygon.cpp">
       <Filter>Sources</Filter>
@@ -110,11 +107,14 @@
     <ClCompile Include="Source\Physics\Velocity.cpp">
       <Filter>Sources\Physics\Basics</Filter>
     </ClCompile>
-    <ClCompile Include="Source\IO\Vector2fSerializer.cpp">
+    <ClCompile Include="Source\Serialization\ConvexShapeSerializer.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Serialization\Vector2fSerializer.cpp">
       <Filter>Sources\IO</Filter>
     </ClCompile>
-    <ClCompile Include="Source\IO\ConvexShapeSerializer.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Source\Physics\RandomVelocityGenerator.cpp">
+      <Filter>Sources\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
