@@ -18,7 +18,3 @@ bool Updateable::isEnabled() const {
 void Updateable::enable() {
 	enabled = true;
 }
-
-void Updateable::disable() {
-	enabled = false;
-}

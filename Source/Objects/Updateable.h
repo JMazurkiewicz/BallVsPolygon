@@ -9,9 +9,7 @@ public:
 	void update(float time);
 
 	bool isEnabled() const;
-	
 	void enable();
-	void disable();
 
 protected:
 

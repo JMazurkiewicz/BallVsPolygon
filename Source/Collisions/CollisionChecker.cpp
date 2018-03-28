@@ -1,21 +1,19 @@
-#include "BallCollisionChecker.h"
+#include "CollisionChecker.h"
 
 #include <cstddef>
 
-BallCollisionChecker::BallCollisionChecker(const Ball& ball)
+CollisionChecker::CollisionChecker(const Ball& ball)
 	: ball(ball) { }
 
-bool BallCollisionChecker::didCollisionHappenWith(const Polygon& polygon) {
+bool CollisionChecker::didCollisionHappenWith(const Polygon& polygon) {
 
-	for(std::size_t i = 0; i < polygon.getPointCount(); ++i) {
+	for(std::size_t pointIndex = 0; pointIndex != polygon.getPointCount(); ++pointIndex) {
 
-		const LineSegment side = polygon.getSide(i);
+		const LineSegment side = polygon.getSide(pointIndex);
 
 		if(didCollisionHappenWithSide(side)) {
-
 			collidedSide = side.getLine();
 			return true;
-			
 		}
 
 	}
@@ -24,11 +22,11 @@ bool BallCollisionChecker::didCollisionHappenWith(const Polygon& polygon) {
 
 }
 
-Line BallCollisionChecker::getCollidedSide() const {
+Line CollisionChecker::getCollidedSide() const {
 	return collidedSide;
 }
 
-bool BallCollisionChecker::didCollisionHappenWithSide(const LineSegment& side) const {
+bool CollisionChecker::didCollisionHappenWithSide(const LineSegment& side) const {
 
 	const sf::Vector2f ballPosition = ball.getPosition();
 	const float ballRadius = ball.getRadius();

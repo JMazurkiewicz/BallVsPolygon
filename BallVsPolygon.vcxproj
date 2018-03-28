@@ -119,7 +119,7 @@
     <ClInclude Include="Source\Objects\Updateable.h" />
     <ClInclude Include="Source\Serialization\ConvexShapeSerializer.h" />
     <ClInclude Include="Source\Serialization\Vector2fSerializer.h" />
-    <ClInclude Include="Source\Display\MainWindow.h" />
+    <ClInclude Include="Source\Runtime\MainWindow.h" />
     <ClInclude Include="Source\Math\Constants.h" />
     <ClInclude Include="Source\Objects\Ball.h" />
     <ClInclude Include="Source\Objects\Polygon.h" />
@@ -128,17 +128,17 @@
     <ClInclude Include="Source\Physics\Timer.h" />
     <ClInclude Include="Source\Math\Line.h" />
     <ClInclude Include="Source\Physics\Velocity.h" />
-    <ClInclude Include="Source\Collisions\BallCollisionChecker.h" />
+    <ClInclude Include="Source\Collisions\CollisionChecker.h" />
     <ClInclude Include="Source\Physics\RandomVelocityGenerator.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\BallVsPolygon.cpp" />
+    <ClCompile Include="Source\Runtime\Application.cpp" />
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp" />
     <ClCompile Include="Source\Objects\PhysicalObject.cpp" />
     <ClCompile Include="Source\Objects\Updateable.cpp" />
     <ClCompile Include="Source\Serialization\ConvexShapeSerializer.cpp" />
     <ClCompile Include="Source\Serialization\Vector2fSerializer.cpp" />
-    <ClCompile Include="Source\Display\MainWindow.cpp" />
+    <ClCompile Include="Source\Runtime\MainWindow.cpp" />
     <ClCompile Include="Source\Objects\Ball.cpp" />
     <ClCompile Include="Source\Objects\Polygon.cpp" />
     <ClCompile Include="Source\Math\AxialSymmetry.cpp" />
@@ -146,7 +146,7 @@
     <ClCompile Include="Source\Physics\Timer.cpp" />
     <ClCompile Include="Source\Math\Line.cpp" />
     <ClCompile Include="Source\Physics\Velocity.cpp" />
-    <ClCompile Include="Source\Collisions\BallCollisionChecker.cpp" />
+    <ClCompile Include="Source\Collisions\CollisionChecker.cpp" />
     <ClCompile Include="Source\Physics\RandomVelocityGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>

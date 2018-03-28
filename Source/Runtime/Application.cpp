@@ -1,26 +1,26 @@
-#include "Collisions/BallCollisionChecker.h"
-#include "Display/MainWindow.h"
+#include "Collisions/CollisionChecker.h"
 #include <exception>
 #include "Objects/Ball.h"
 #include "Objects/Polygon.h"
 #include "Physics/RandomVelocityGenerator.h"
 #include "Physics/Timer.h"
+#include "Runtime/MainWindow.h"
 
 namespace {
 
-	constexpr float BALL_VELOCITY = 10;
-	constexpr float BALL_RADIUS = 20;
+	constexpr float BALL_VELOCITY = 300.0F;
+	constexpr float BALL_RADIUS = 20.0F;
 
 }
 
-class BallVsPolygon {
+class Application {
 
 public:
 
-	BallVsPolygon() : ball(BALL_RADIUS) { }
+	Application() : ball(BALL_RADIUS) { }
 
-	BallVsPolygon(const BallVsPolygon&) = delete;
-	BallVsPolygon& operator=(const BallVsPolygon&) = delete;
+	Application(const Application&) = delete;
+	Application& operator=(const Application&) = delete;
 
 	void run() {
 
@@ -75,7 +75,7 @@ private:
 	void processPressedMouseButton(sf::Mouse::Button button) {
 
 		if(button == sf::Mouse::Left) {
-			setBallPositionToMousePosition();
+			restartBall();
 		}
 
 	}
@@ -91,7 +91,7 @@ private:
 
 	void checkCollisions() {
 
-		BallCollisionChecker collisionChecker(ball);
+		CollisionChecker collisionChecker(ball);
 
 		if(collisionChecker.didCollisionHappenWith(polygon)) {
 			ball.bounceFromLine(collisionChecker.getCollidedSide());
@@ -114,10 +114,9 @@ private:
 		timer.switchMode();
 	}
 	
-	void setBallPositionToMousePosition() {
+	void restartBall() {
 
 		const sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
-
 		ball.setPosition(mousePosition);
 		
 		RandomVelocityGenerator velocityGenerator(BALL_VELOCITY);
@@ -140,7 +139,7 @@ int main() {
 
 	try {
 
-		BallVsPolygon app;
+		Application app;
 		app.run();
 
 	} catch(const std::exception& e) {

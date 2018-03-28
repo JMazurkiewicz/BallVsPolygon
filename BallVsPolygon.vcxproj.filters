@@ -60,13 +60,13 @@
       <Filter>Sources\Physics</Filter>
     </ClInclude>
     <ClInclude Include="Source\Math\Constants.h" />
-    <ClInclude Include="Source\Display\MainWindow.h">
-      <Filter>Sources\Display</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Objects\Updateable.h" />
     <ClInclude Include="Source\Objects\PhysicalObject.h" />
-    <ClInclude Include="Source\Collisions\BallCollisionChecker.h">
+    <ClInclude Include="Source\Collisions\CollisionChecker.h">
       <Filter>Sources\Physics\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\MainWindow.h">
+      <Filter>Sources\Display</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -78,9 +78,6 @@
     </ClCompile>
     <ClCompile Include="Source\Objects\Polygon.cpp">
       <Filter>Sources\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\BallVsPolygon.cpp">
-      <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="Source\Math\Line.cpp">
       <Filter>Sources\Physics\Basics</Filter>
@@ -106,17 +103,20 @@
     <ClCompile Include="Source\Physics\RandomVelocityGenerator.cpp">
       <Filter>Sources\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Display\MainWindow.cpp">
-      <Filter>Sources\Display</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Objects\Updateable.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="Source\Objects\PhysicalObject.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Collisions\BallCollisionChecker.cpp">
+    <ClCompile Include="Source\Collisions\CollisionChecker.cpp">
       <Filter>Sources\Physics\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\MainWindow.cpp">
+      <Filter>Sources\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Application.cpp">
+      <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
