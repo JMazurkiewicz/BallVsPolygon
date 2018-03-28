@@ -14,8 +14,6 @@ public:
 	const sf::Vector2f& getFirstPoint() const;
 	const sf::Vector2f& getSecondPoint() const;
 
-	sf::FloatRect makeRectangle() const;
-
 private:
 
 	Line line;

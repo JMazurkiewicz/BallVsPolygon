@@ -16,9 +16,9 @@ public:
 
 	void restart();
 
-	void switchMode();
 	void enable();
 	void disable();
+	void switchMode();
 
 	Seconds getEllapsedTime();
 

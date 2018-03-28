@@ -17,7 +17,6 @@ private:
 	void loadPointsFromFile();
 	void initPolygonStyle();
 
-	[[noreturn]]
-	void throwBecauseIndexIsInvalid() const;
+	void throwIfIndexIsInvalid(std::size_t index) const;
 
 };

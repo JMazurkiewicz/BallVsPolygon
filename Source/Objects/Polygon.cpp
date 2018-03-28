@@ -13,14 +13,12 @@ Polygon::Polygon() {
 
 LineSegment Polygon::getSide(std::size_t index) const {
 
-	if(index >= getPointCount()) {
-		throwBecauseIndexIsInvalid();
-	}
+	throwIfIndexIsInvalid(index);
 
 	const std::size_t firstPointIndex = index;
 	const std::size_t secondPointIndex = (index + 1 == getPointCount()) ? (0) : (index + 1);
 
-	return LineSegment(getPoint(firstPointIndex), getPoint(secondPointIndex));
+	return LineSegment{getPoint(firstPointIndex), getPoint(secondPointIndex)};
 
 }
 
@@ -39,10 +37,14 @@ void Polygon::initPolygonStyle() {
 	setFillColor(sf::Color{0, 0, 0, 0});
 
 	setOutlineColor(sf::Color::White);
-	setOutlineThickness(10.0F);
+	setOutlineThickness(5.0F);
 
 }
 
-void Polygon::throwBecauseIndexIsInvalid() const {
-	throw std::out_of_range("Polygon: invalid index");
+void Polygon::throwIfIndexIsInvalid(std::size_t index) const {
+	
+	if(index >= getPointCount()) {
+		throw std::out_of_range("Polygon: invalid index");
+	}
+
 }

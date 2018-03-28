@@ -12,16 +12,6 @@ void Timer::restart() {
 	stop = Clock::now();
 }
 
-void Timer::switchMode() {
-
-	if(isEnabled()) {
-		disable();
-	} else {
-		enable();
-	}
-
-}
-
 void Timer::enable() {
 	
 	if(!isEnabled()) {
@@ -33,6 +23,16 @@ void Timer::enable() {
 
 void Timer::disable() {
 	enabled = false;
+}
+
+void Timer::switchMode() {
+
+	if(isEnabled()) {
+		disable();
+	} else {
+		enable();
+	}
+
 }
 
 Timer::Seconds Timer::getEllapsedTime() {

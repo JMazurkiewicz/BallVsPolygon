@@ -31,11 +31,18 @@ Line BallCollisionChecker::getCollidedSide() const {
 bool BallCollisionChecker::didCollisionHappenWithSide(const LineSegment& side) const {
 
 	const sf::Vector2f ballPosition = ball.getPosition();
+	const float ballRadius = ball.getRadius();
 
-	const sf::FloatRect sideRectangle = side.makeRectangle();
-	const sf::FloatRect ballRectangle = ball.makeRectangle();
+	const Line sideLine = side.getLine();
 
-	return (side.getLine().getDistanceFromPoint(ballPosition) <= ball.getRadius()) && sideRectangle.intersects(ballRectangle);
+	const Line firstStop = sideLine.getPerpendicularLinePassingThroughPoint(side.getFirstPoint());
+	const Line secondStop = sideLine.getPerpendicularLinePassingThroughPoint(side.getSecondPoint());
 
+	return
+		sideLine.getDistanceFromPoint(ballPosition) <= ballRadius &&
+		(firstStop.getDistanceFromPoint(ballPosition) <= ballRadius ||
+		 secondStop.getDistanceFromPoint(ballPosition) <= ballRadius ||
+		 firstStop.getDistanceFromLine(secondStop) >= firstStop.getDistanceFromPoint(ballPosition) +
+		 secondStop.getDistanceFromPoint(ballPosition));
 
 }

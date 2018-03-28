@@ -27,6 +27,13 @@ float Line::getDistanceFromPoint(const sf::Vector2f& point) const {
 	return std::abs(a*point.x + b*point.y + c) / std::sqrt(a*a + b*b);
 }
 
+float Line::getDistanceFromLine(const Line& other) const {
+
+	throwIfLinesAreNotParallel(other);
+	return std::abs(c - other.c) / std::sqrt(a*a + b*b);
+
+}
+
 sf::Vector2f Line::getCommonPointWith(const Line& other) const {
 
 	throwIfLinesHaveNoCommonPoint(other);
@@ -60,6 +67,18 @@ Line Line::getPerpendicularLinePassingThroughPoint(const sf::Vector2f& point) co
 	perpendicularLine.c = a*point.y - b*point.x;
 
 	return perpendicularLine;
+
+}
+
+float Line::GetCParam() const {
+	return c;
+}
+
+void Line::throwIfLinesAreNotParallel(const Line& other) const {
+
+	if(!isParallelTo(other)) {
+		throw std::logic_error("Line: lines are not parallel");
+	}
 
 }
 

@@ -10,15 +10,13 @@ class Ball : public Updateable, public PhysicalObject, public sf::CircleShape {
 
 public:
 
-	explicit Ball(float radius, float velocity);
-
-	sf::FloatRect makeRectangle() const;
-
-	void bounceOnCollisionWith(const Polygon& polygon);
+	explicit Ball(float radius);
 
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
 
 private:
+
+	void initBallStyle();
 
 	virtual void doUpdate(float time) override;
 

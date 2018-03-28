@@ -1,6 +1,6 @@
+#include "Collisions/BallCollisionChecker.h"
 #include "Display/MainWindow.h"
 #include <exception>
-#include <iomanip>
 #include "Objects/Ball.h"
 #include "Objects/Polygon.h"
 #include "Physics/RandomVelocityGenerator.h"
@@ -8,7 +8,8 @@
 
 namespace {
 
-	constexpr float BALL_VELOCITY = 50;
+	constexpr float BALL_VELOCITY = 10;
+	constexpr float BALL_RADIUS = 20;
 
 }
 
@@ -16,14 +17,12 @@ class BallVsPolygon {
 
 public:
 
-	BallVsPolygon() : ball(20, BALL_VELOCITY) { }
+	BallVsPolygon() : ball(BALL_RADIUS) { }
 
 	BallVsPolygon(const BallVsPolygon&) = delete;
 	BallVsPolygon& operator=(const BallVsPolygon&) = delete;
 
 	void run() {
-
-		timer.restart();
 
 		while(window.isOpen()) {
 
@@ -40,21 +39,43 @@ private:
 	void listenForEvents() {
 
 		for(sf::Event event; window.pollEvent(event); ) {
+			processEvent(event);
+		}
 
-			if(event.type == sf::Event::Closed) {
+	}
+	
+	void processEvent(const sf::Event& event) {
 
-				window.close();
+		switch(event.type) {
 
-			} else if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {
+		case sf::Event::Closed:
+			window.close();
+			break;
 
-				switchPause();
+		case sf::Event::KeyPressed:
+			processPressedKey(event.key.code);
+			break;
 
-			} else if(event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+		case sf::Event::MouseButtonPressed:
+			processPressedMouseButton(event.mouseButton.button);
+			break;
 
-				setBallPositionToMousePosition();
+		}
 
-			}
+	}
 
+	void processPressedKey(sf::Keyboard::Key key) {
+
+		if(key == sf::Keyboard::Space) {
+			switchPause();
+		}
+
+	}
+
+	void processPressedMouseButton(sf::Mouse::Button button) {
+
+		if(button == sf::Mouse::Left) {
+			setBallPositionToMousePosition();
 		}
 
 	}
@@ -64,14 +85,24 @@ private:
 		const Timer::Seconds ellapsedTime = timer.getEllapsedTime();
 
 		ball.Updateable::update(ellapsedTime.count());
-		ball.bounceOnCollisionWith(polygon);
+		checkCollisions();
+
+	}
+
+	void checkCollisions() {
+
+		BallCollisionChecker collisionChecker(ball);
+
+		if(collisionChecker.didCollisionHappenWith(polygon)) {
+			ball.bounceFromLine(collisionChecker.getCollidedSide());
+		}
 
 	}
 
 	void displayNewView() {
 
 		window.clear();
-		
+
 		window.draw(ball);
 		window.draw(polygon);
 
@@ -97,10 +128,11 @@ private:
 	}
 	
 	MainWindow window;
-	Timer timer;
 
 	Ball ball;
 	Polygon polygon;
+
+	Timer timer;
 
 };
 
