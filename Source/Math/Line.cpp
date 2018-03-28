@@ -11,9 +11,7 @@ Line::Line(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint) {
 
 void Line::assignLinePassingThroughTwoPoints(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint) {
 
-	if(firstPoint == secondPoint) {
-		throwBecausePointsAreNotOnOneLine();
-	}
+	throwIfPointsAreNotOnOneLine(firstPoint, secondPoint);
 
 	a = secondPoint.y - firstPoint.y;
 	b = firstPoint.x - secondPoint.x;
@@ -31,9 +29,7 @@ float Line::getDistanceFromPoint(const sf::Vector2f& point) const {
 
 sf::Vector2f Line::getCommonPointWith(const Line& other) const {
 
-	if(isParallelTo(other)) {
-		throwBecauseLinesHaveNoCommonPoint(other);
-	}
+	throwIfLinesHaveNoCommonPoint(other);
 
 	const float ab = a*other.b - other.a*b;
 	const float bc = b*other.c - other.b*c;
@@ -67,20 +63,28 @@ Line Line::getPerpendicularLinePassingThroughPoint(const sf::Vector2f& point) co
 
 }
 
-void Line::throwBecausePointsAreNotOnOneLine() const {
-	throw std::logic_error("unable to make a line from given points (they are not on one line)");
-}
-
-void Line::throwBecauseLinesHaveNoCommonPoint(const Line& other) const {
-
-	const char* message;
-
-	if(c == other.c) {
-		message = "lines are the same";
-	} else {
-		message = "lines don't intersect";
+void Line::throwIfPointsAreNotOnOneLine(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint) const {
+	
+	if(firstPoint == secondPoint) {
+		throw std::logic_error("unable to make a line from given points (they are not on one line)");
 	}
 
-	throw std::logic_error(message);
+}
+
+void Line::throwIfLinesHaveNoCommonPoint(const Line& other) const {
+
+	if(isParallelTo(other)) {
+
+		const char* message;
+
+		if(c == other.c) {
+			message = "lines are the same";
+		} else {
+			message = "lines don't intersect";
+		}
+
+		throw std::logic_error(message);
+
+	}
 
 }

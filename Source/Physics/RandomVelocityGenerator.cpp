@@ -10,7 +10,7 @@ RandomVelocityGenerator::RandomVelocityGenerator(float velocityValue)
 
 Velocity RandomVelocityGenerator::generate() {
 	
-	std::uniform_real_distribution<float> angleDistribtion(0, 2 * Math::PI);
+	std::uniform_real_distribution<float> angleDistribtion(0, 2*Math::PI);
 	const float angle = angleDistribtion(generator);
 
 	const float x = velocityValue * std::cos(angle);

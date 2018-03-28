@@ -37,9 +37,6 @@
     <ClInclude Include="Source\Objects\Polygon.h">
       <Filter>Sources\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Display\MainWindow.h">
-      <Filter>Sources\Display</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Math\LineSegment.h">
       <Filter>Sources\Physics\Basics</Filter>
     </ClInclude>
@@ -48,9 +45,6 @@
     </ClInclude>
     <ClInclude Include="Source\Math\AxialSymmetry.h">
       <Filter>Sources\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Collisions\CollisionChecker.h">
-      <Filter>Sources\Physics\Collisions</Filter>
     </ClInclude>
     <ClInclude Include="Source\Physics\Velocity.h">
       <Filter>Sources\Physics\Basics</Filter>
@@ -66,6 +60,14 @@
       <Filter>Sources\Physics</Filter>
     </ClInclude>
     <ClInclude Include="Source\Math\Constants.h" />
+    <ClInclude Include="Source\Display\MainWindow.h">
+      <Filter>Sources\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Objects\Updateable.h" />
+    <ClInclude Include="Source\Objects\PhysicalObject.h" />
+    <ClInclude Include="Source\Collisions\BallCollisionChecker.h">
+      <Filter>Sources\Physics\Collisions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp">
@@ -80,9 +82,6 @@
     <ClCompile Include="Source\BallVsPolygon.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Display\MainWindow.cpp">
-      <Filter>Sources\Display</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Math\Line.cpp">
       <Filter>Sources\Physics\Basics</Filter>
     </ClCompile>
@@ -91,9 +90,6 @@
     </ClCompile>
     <ClCompile Include="Source\Math\AxialSymmetry.cpp">
       <Filter>Sources\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Collisions\CollisionChecker.cpp">
-      <Filter>Sources\Physics\Collisions</Filter>
     </ClCompile>
     <ClCompile Include="Source\Physics\Timer.cpp">
       <Filter>Sources\Physics\Basics</Filter>
@@ -109,6 +105,18 @@
     </ClCompile>
     <ClCompile Include="Source\Physics\RandomVelocityGenerator.cpp">
       <Filter>Sources\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Display\MainWindow.cpp">
+      <Filter>Sources\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Objects\Updateable.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Objects\PhysicalObject.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collisions\BallCollisionChecker.cpp">
+      <Filter>Sources\Physics\Collisions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

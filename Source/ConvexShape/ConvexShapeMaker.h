@@ -13,8 +13,7 @@ public:
 
 private:
 
-	[[noreturn]]
-	void throwBecausePointCountIsTooSmall() const;
+	void throwIfPointCountIsTooSmall() const;
 
 	const std::vector<sf::Vector2f>& points;
 

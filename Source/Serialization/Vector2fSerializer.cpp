@@ -1,7 +1,7 @@
 #include "Vector2fSerializer.h"
 
 Vector2fSerializer::Vector2fSerializer(std::istream& stream)
-	: stream(stream), separator('\0') { }
+	: stream(stream) { }
 
 void Vector2fSerializer::serialize(sf::Vector2f& vector) {
 
@@ -27,6 +27,8 @@ void Vector2fSerializer::loadVector() {
 }
 
 void Vector2fSerializer::discardSeparator() {
+
+	char separator;
 
 	if(stream >> separator) {
 		if(separator != ',') {

@@ -1,16 +1,22 @@
-#include <cstdlib>
+#include "Display/MainWindow.h"
 #include <exception>
 #include <iomanip>
-#include "Display/MainWindow.h"
 #include "Objects/Ball.h"
 #include "Objects/Polygon.h"
+#include "Physics/RandomVelocityGenerator.h"
 #include "Physics/Timer.h"
+
+namespace {
+
+	constexpr float BALL_VELOCITY = 50;
+
+}
 
 class BallVsPolygon {
 
 public:
 
-	BallVsPolygon() = default;
+	BallVsPolygon() : ball(20, BALL_VELOCITY) { }
 
 	BallVsPolygon(const BallVsPolygon&) = delete;
 	BallVsPolygon& operator=(const BallVsPolygon&) = delete;
@@ -57,7 +63,7 @@ private:
 
 		const Timer::Seconds ellapsedTime = timer.getEllapsedTime();
 
-		ball.update(ellapsedTime.count());
+		ball.Updateable::update(ellapsedTime.count());
 		ball.bounceOnCollisionWith(polygon);
 
 	}
@@ -82,7 +88,10 @@ private:
 		const sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 
 		ball.setPosition(mousePosition);
-		ball.randomizeVelocityVector();
+		
+		RandomVelocityGenerator velocityGenerator(BALL_VELOCITY);
+		ball.setVelocity(velocityGenerator.generate());
+
 		ball.enable();
 
 	}
@@ -105,8 +114,7 @@ int main() {
 	} catch(const std::exception& e) {
 
 		sf::err() << "Fatal error occured, application will be terminated\n";
-		sf::err() << "what(): " << std::quoted(e.what()) << '\n';
-		return EXIT_FAILURE;
+		sf::err() << "what(): \"" << e.what() << "\"\n";
 
 	}
 

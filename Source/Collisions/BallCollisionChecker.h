@@ -5,11 +5,11 @@
 #include "Objects/Ball.h"
 #include "Objects/Polygon.h"
 
-class CollisionChecker {
+class BallCollisionChecker {
 
 public:
 
-	explicit CollisionChecker(const Ball& ball);
+	explicit BallCollisionChecker(const Ball& ball);
 
 	bool didCollisionHappenWith(const Polygon& polygon);
 	Line getCollidedSide() const;

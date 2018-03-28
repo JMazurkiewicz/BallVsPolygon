@@ -1,7 +1,7 @@
 #pragma once
 
 #include <istream>
-#include <SFML/Graphics.hpp>
+#include <SFML/System/Vector2.hpp>
 
 class Vector2fSerializer {
 
@@ -21,7 +21,6 @@ private:
 
 	std::istream& stream;
 
-	char separator;
 	sf::Vector2f result;
 
 };

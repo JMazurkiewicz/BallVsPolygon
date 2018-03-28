@@ -39,10 +39,10 @@ void Polygon::initPolygonStyle() {
 	setFillColor(sf::Color{0, 0, 0, 0});
 
 	setOutlineColor(sf::Color::White);
-	setOutlineThickness(1.0F);
+	setOutlineThickness(10.0F);
 
 }
 
 void Polygon::throwBecauseIndexIsInvalid() const {
-	throw std::out_of_range("Polygon::getSide(): invalid index");
+	throw std::out_of_range("Polygon: invalid index");
 }

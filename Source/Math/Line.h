@@ -1,6 +1,6 @@
 #pragma once
 
-#include <SFML/System.hpp>
+#include <SFML/System/Vector2.hpp>
 
 class Line {
 
@@ -24,10 +24,7 @@ private:
 
 	float a, b, c;
 
-	[[noreturn]]
-	void throwBecausePointsAreNotOnOneLine() const;
-
-	[[noreturn]]
-	void throwBecauseLinesHaveNoCommonPoint(const Line& other) const;
+	void throwIfPointsAreNotOnOneLine(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint) const;
+	void throwIfLinesHaveNoCommonPoint(const Line& other) const;
 
 };
