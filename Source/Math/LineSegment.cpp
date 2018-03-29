@@ -1,8 +1,5 @@
 #include "LineSegment.h"
 
-#include <algorithm>
-#include <cmath>
-
 LineSegment::LineSegment(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint)
 	: line(firstPoint, secondPoint), firstPoint(firstPoint), secondPoint(secondPoint) { }
 

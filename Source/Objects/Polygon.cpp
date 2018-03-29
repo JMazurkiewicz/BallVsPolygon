@@ -25,7 +25,7 @@ LineSegment Polygon::getSide(std::size_t index) const {
 void Polygon::loadPointsFromFile() {
 
 	std::ifstream file("points.txt");
-	file.exceptions(std::ios_base::failbit);
+	file.exceptions(std::ios_base::failbit | std::ios_base::badbit);
 
 	ConvexShapeSerializer shapeSerializer(file);
 	shapeSerializer.serialize(*this);

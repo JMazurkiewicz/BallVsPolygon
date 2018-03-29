@@ -9,7 +9,7 @@ public:
 	Line();
 	explicit Line(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint);
 
-	void assignLinePassingThroughTwoPoints(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint);
+	void assignLinePassingThroughPoints(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint);
 
 	bool isParallelTo(const Line& other) const;
 

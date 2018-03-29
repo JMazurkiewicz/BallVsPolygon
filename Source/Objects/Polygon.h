@@ -10,6 +10,9 @@ public:
 
 	Polygon();
 
+	Polygon(const Polygon&) = delete;
+	Polygon& operator=(const Polygon&) = delete;
+
 	LineSegment getSide(std::size_t index) const;
 
 private:

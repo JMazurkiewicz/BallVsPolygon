@@ -6,10 +6,10 @@
 Line::Line() : a(0), b(1), c(0) { }
 
 Line::Line(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint) {
-	assignLinePassingThroughTwoPoints(firstPoint, secondPoint);
+	assignLinePassingThroughPoints(firstPoint, secondPoint);
 }
 
-void Line::assignLinePassingThroughTwoPoints(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint) {
+void Line::assignLinePassingThroughPoints(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint) {
 
 	throwIfPointsAreNotOnOneLine(firstPoint, secondPoint);
 
@@ -77,7 +77,7 @@ float Line::GetCParam() const {
 void Line::throwIfLinesAreNotParallel(const Line& other) const {
 
 	if(!isParallelTo(other)) {
-		throw std::logic_error("Line: lines are not parallel");
+		throw std::logic_error("lines are not parallel");
 	}
 
 }

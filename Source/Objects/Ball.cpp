@@ -1,28 +1,14 @@
 #include "Ball.h"
 
-#include "Math/AxialSymmetry.h"
-
-Ball::Ball(float radius) : CircleShape(radius) {
+Ball::Ball(float radius) : CircleShape(radius, 30) {
 	initBallStyle();
 }
 
-void Ball::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-
-	if(isEnabled()) {
-		target.draw(CircleShape{*this}, states);
-	}
-
+void Ball::update(float time) {
+	move(getVelocity().calculateDistanceVector(time));
 }
 
 void Ball::initBallStyle() {
-
 	setFillColor(sf::Color{0, 128, 128});
 	setOrigin(getRadius(), getRadius());
-
-}
-
-void Ball::doUpdate(float time) {
-
-	move(getVelocity().calculateDistanceVector(time));
-
 }
