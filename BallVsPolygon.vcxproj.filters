@@ -61,7 +61,6 @@
     </ClInclude>
     <ClInclude Include="Source\Math\Constants.h" />
     <ClInclude Include="Source\Objects\Updateable.h" />
-    <ClInclude Include="Source\Objects\PhysicalObject.h" />
     <ClInclude Include="Source\Collisions\CollisionChecker.h">
       <Filter>Sources\Physics\Collisions</Filter>
     </ClInclude>
@@ -70,6 +69,8 @@
     </ClInclude>
     <ClInclude Include="Source\Runtime\ObjectManager.h" />
     <ClInclude Include="Source\Runtime\EventListener.h" />
+    <ClInclude Include="Source\Collisions\BallBouncer.h" />
+    <ClInclude Include="Source\Objects\DynamicObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp">
@@ -105,9 +106,6 @@
     <ClCompile Include="Source\Physics\RandomVelocityGenerator.cpp">
       <Filter>Sources\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Objects\PhysicalObject.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Collisions\CollisionChecker.cpp">
       <Filter>Sources\Physics\Collisions</Filter>
     </ClCompile>
@@ -121,6 +119,12 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\EventListener.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collisions\BallBouncer.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Objects\DynamicObject.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

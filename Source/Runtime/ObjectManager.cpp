@@ -1,5 +1,6 @@
 #include "ObjectManager.h"
 
+#include "Collisions/BallBouncer.h"
 #include "Collisions/CollisionChecker.h"
 #include "Physics/RandomVelocityGenerator.h"
 
@@ -43,7 +44,10 @@ void ObjectManager::checkCollisions() {
 	CollisionChecker collisionChecker(*ball);
 
 	if(collisionChecker.didCollisionHappenWith(polygon)) {
-		ball->bounceFromLine(collisionChecker.getCollidedSide());
+		
+		BallBouncer bouncer(*ball);
+		bouncer.bounceFrom(collisionChecker.getCollidedSide());
+
 	}
 
 }

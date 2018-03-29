@@ -19,6 +19,14 @@ void Line::assignLinePassingThroughPoints(const sf::Vector2f& firstPoint, const 
 	 
 }
 
+float Line::GetCParam() const {
+	return c;
+}
+
+sf::Vector2f Line::getNormalVector() const {
+	return sf::Vector2f{a, b};
+}
+
 bool Line::isParallelTo(const Line& other) const {
 	return a*other.b - other.a*b == 0;
 }
@@ -68,10 +76,6 @@ Line Line::getPerpendicularLinePassingThroughPoint(const sf::Vector2f& point) co
 
 	return perpendicularLine;
 
-}
-
-float Line::GetCParam() const {
-	return c;
 }
 
 void Line::throwIfLinesAreNotParallel(const Line& other) const {

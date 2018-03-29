@@ -18,6 +18,9 @@ private:
 
 	bool didCollisionHappenWithSide(const LineSegment& side) const;
 	
+	bool isBallTouchingSide(const LineSegment& side) const;
+	bool isBallNoticeableBySide(const LineSegment& side) const;
+
 	const Ball& ball;
 	Line collidedSide;
 

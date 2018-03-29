@@ -114,8 +114,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Collisions\BallBouncer.h" />
     <ClInclude Include="Source\ConvexShape\ConvexShapeMaker.h" />
-    <ClInclude Include="Source\Objects\PhysicalObject.h" />
+    <ClInclude Include="Source\Objects\DynamicObject.h" />
     <ClInclude Include="Source\Objects\Updateable.h" />
     <ClInclude Include="Source\Runtime\EventListener.h" />
     <ClInclude Include="Source\Runtime\ObjectManager.h" />
@@ -134,11 +135,12 @@
     <ClInclude Include="Source\Physics\RandomVelocityGenerator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Collisions\BallBouncer.cpp" />
     <ClCompile Include="Source\Runtime\EventListener.cpp" />
     <ClCompile Include="Source\Runtime\ObjectManager.cpp" />
     <ClCompile Include="Source\Runtime\Application.cpp" />
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp" />
-    <ClCompile Include="Source\Objects\PhysicalObject.cpp" />
+    <ClCompile Include="Source\Objects\DynamicObject.cpp" />
     <ClCompile Include="Source\Serialization\ConvexShapeSerializer.cpp" />
     <ClCompile Include="Source\Serialization\Vector2fSerializer.cpp" />
     <ClCompile Include="Source\Runtime\MainWindow.cpp" />

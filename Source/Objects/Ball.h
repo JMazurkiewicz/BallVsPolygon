@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Objects/PhysicalObject.h"
+#include "Objects/DynamicObject.h"
 #include "Objects/Updateable.h"
 #include <SFML/Graphics.hpp>
 
-class Ball : public Updateable, public PhysicalObject, public sf::CircleShape {
+class Ball : public Updateable, public DynamicObject, public sf::CircleShape {
 
 public:
 

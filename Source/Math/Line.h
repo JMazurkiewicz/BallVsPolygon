@@ -11,6 +11,9 @@ public:
 
 	void assignLinePassingThroughPoints(const sf::Vector2f& firstPoint, const sf::Vector2f& secondPoint);
 
+	float GetCParam() const;
+	sf::Vector2f getNormalVector() const;
+
 	bool isParallelTo(const Line& other) const;
 
 	float getDistanceFromPoint(const sf::Vector2f& point) const;
@@ -20,8 +23,6 @@ public:
 
 	Line getParallelLinePassingThroughPoint(const sf::Vector2f& point) const;
 	Line getPerpendicularLinePassingThroughPoint(const sf::Vector2f& point) const;
-
-	float GetCParam() const;
 
 private:
 

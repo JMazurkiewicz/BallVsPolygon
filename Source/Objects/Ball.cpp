@@ -9,6 +9,6 @@ void Ball::update(float time) {
 }
 
 void Ball::initBallStyle() {
-	setFillColor(sf::Color{0, 128, 128});
+	setFillColor(sf::Color{175, 96, 140});
 	setOrigin(getRadius(), getRadius());
 }

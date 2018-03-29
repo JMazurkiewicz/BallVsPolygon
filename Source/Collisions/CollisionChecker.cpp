@@ -27,20 +27,23 @@ Line CollisionChecker::getCollidedSide() const {
 }
 
 bool CollisionChecker::didCollisionHappenWithSide(const LineSegment& side) const {
+	return isBallNoticeableBySide(side) && isBallTouchingSide(side);
+}
 
-	const sf::Vector2f ballPosition = ball.getPosition();
-	const float ballRadius = ball.getRadius();
+bool CollisionChecker::isBallTouchingSide(const LineSegment& side) const {
 
-	const Line sideLine = side.getLine();
+	return side.getLine().getDistanceFromPoint(ball.getPosition()) <= ball.getRadius();
 
-	const Line firstStop = sideLine.getPerpendicularLinePassingThroughPoint(side.getFirstPoint());
-	const Line secondStop = sideLine.getPerpendicularLinePassingThroughPoint(side.getSecondPoint());
+}
 
-	return
-		sideLine.getDistanceFromPoint(ballPosition) <= ballRadius &&
-		(firstStop.getDistanceFromPoint(ballPosition) <= ballRadius ||
-		 secondStop.getDistanceFromPoint(ballPosition) <= ballRadius ||
-		 firstStop.getDistanceFromLine(secondStop) >= firstStop.getDistanceFromPoint(ballPosition) +
-		 secondStop.getDistanceFromPoint(ballPosition));
+bool CollisionChecker::isBallNoticeableBySide(const LineSegment& side) const {
+
+	const Line firstStop = side.getLine().getPerpendicularLinePassingThroughPoint(side.getFirstPoint());
+	const Line secondStop = side.getLine().getPerpendicularLinePassingThroughPoint(side.getSecondPoint());
+
+	const float distanceBetweenEachStop = firstStop.getDistanceFromPoint(ball.getPosition()) +
+		secondStop.getDistanceFromPoint(ball.getPosition());
+
+	return firstStop.getDistanceFromLine(secondStop) >= distanceBetweenEachStop;
 
 }
