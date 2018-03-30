@@ -298,3 +298,7 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 ClassDiagram.cd
+
+# Extra files
+*.config
+*.vcxproj.filters

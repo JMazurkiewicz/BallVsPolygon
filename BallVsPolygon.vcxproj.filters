@@ -14,17 +14,17 @@
     <Filter Include="Sources\ConvexShape">
       <UniqueIdentifier>{0a5450c2-2e62-4388-a06f-771c48202f22}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\Physics\Basics">
-      <UniqueIdentifier>{4611482c-2c44-4575-aec8-c3db0d254651}</UniqueIdentifier>
+    <Filter Include="Sources\Collisions">
+      <UniqueIdentifier>{de7b2175-1c5f-4dff-a465-9a69a0a70ccf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\IO">
+    <Filter Include="Sources\Serialization">
       <UniqueIdentifier>{a22f5339-d1f8-413d-bc76-b09722ddc318}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\Physics\Collisions">
-      <UniqueIdentifier>{a42c3216-4c9c-4589-aa7b-c97229a5bf79}</UniqueIdentifier>
+    <Filter Include="Sources\Math">
+      <UniqueIdentifier>{b2d54137-0533-4f30-8ab1-81a9aa28cf93}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\Display">
-      <UniqueIdentifier>{8b0f557e-8f37-4fd2-987e-052594985359}</UniqueIdentifier>
+    <Filter Include="Sources\Runtime">
+      <UniqueIdentifier>{014f0663-b864-40aa-ac2a-49890870ada2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -37,40 +37,54 @@
     <ClInclude Include="Source\Objects\Polygon.h">
       <Filter>Sources\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Math\LineSegment.h">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Math\Line.h">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Math\AxialSymmetry.h">
-      <Filter>Sources\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Physics\Velocity.h">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Physics\Timer.h">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Serialization\ConvexShapeSerializer.h" />
     <ClInclude Include="Source\Serialization\Vector2fSerializer.h">
-      <Filter>Sources\IO</Filter>
+      <Filter>Sources\Serialization</Filter>
     </ClInclude>
     <ClInclude Include="Source\Physics\RandomVelocityGenerator.h">
       <Filter>Sources\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Math\Constants.h" />
-    <ClInclude Include="Source\Objects\Updateable.h" />
+    <ClInclude Include="Source\Collisions\BallBouncer.h">
+      <Filter>Sources\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Math\Constants.h">
+      <Filter>Sources\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Serialization\ConvexShapeSerializer.h">
+      <Filter>Sources\Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\EventListener.h">
+      <Filter>Sources\Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\ObjectManager.h">
+      <Filter>Sources\Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Math\LineSegment.h">
+      <Filter>Sources\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Math\Line.h">
+      <Filter>Sources\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Math\AxialSymmetry.h">
+      <Filter>Sources\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Velocity.h">
+      <Filter>Sources\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Timer.h">
+      <Filter>Sources\Physics</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Collisions\CollisionChecker.h">
-      <Filter>Sources\Physics\Collisions</Filter>
+      <Filter>Sources\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Objects\DynamicObject.h">
+      <Filter>Sources\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Objects\Updateable.h">
+      <Filter>Sources\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\MainWindow.h">
-      <Filter>Sources\Display</Filter>
+      <Filter>Sources\Runtime</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\ObjectManager.h" />
-    <ClInclude Include="Source\Runtime\EventListener.h" />
-    <ClInclude Include="Source\Collisions\BallBouncer.h" />
-    <ClInclude Include="Source\Objects\DynamicObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ConvexShape\ConvexShapeMaker.cpp">
@@ -82,50 +96,50 @@
     <ClCompile Include="Source\Objects\Polygon.cpp">
       <Filter>Sources\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Math\Line.cpp">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Math\LineSegment.cpp">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Math\AxialSymmetry.cpp">
-      <Filter>Sources\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\Timer.cpp">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\Velocity.cpp">
-      <Filter>Sources\Physics\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Serialization\ConvexShapeSerializer.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Serialization\Vector2fSerializer.cpp">
-      <Filter>Sources\IO</Filter>
+      <Filter>Sources\Serialization</Filter>
     </ClCompile>
     <ClCompile Include="Source\Physics\RandomVelocityGenerator.cpp">
       <Filter>Sources\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Collisions\CollisionChecker.cpp">
-      <Filter>Sources\Physics\Collisions</Filter>
+    <ClCompile Include="Source\Collisions\BallBouncer.cpp">
+      <Filter>Sources\Collisions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\MainWindow.cpp">
-      <Filter>Sources\Display</Filter>
+    <ClCompile Include="Source\Serialization\ConvexShapeSerializer.cpp">
+      <Filter>Sources\Serialization</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Application.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Runtime\ObjectManager.cpp">
-      <Filter>Sources</Filter>
+      <Filter>Sources\Runtime</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\EventListener.cpp">
-      <Filter>Sources</Filter>
+      <Filter>Sources\Runtime</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Collisions\BallBouncer.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Source\Runtime\ObjectManager.cpp">
+      <Filter>Sources\Runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Math\Line.cpp">
+      <Filter>Sources\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Math\LineSegment.cpp">
+      <Filter>Sources\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Math\AxialSymmetry.cpp">
+      <Filter>Sources\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Timer.cpp">
+      <Filter>Sources\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Velocity.cpp">
+      <Filter>Sources\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collisions\CollisionChecker.cpp">
+      <Filter>Sources\Collisions</Filter>
     </ClCompile>
     <ClCompile Include="Source\Objects\DynamicObject.cpp">
-      <Filter>Sources</Filter>
+      <Filter>Sources\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\MainWindow.cpp">
+      <Filter>Sources\Runtime</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
