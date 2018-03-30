@@ -1,4 +1,5 @@
 #include <exception>
+#include <iostream>
 #include "Physics/Timer.h"
 #include "Runtime/EventListener.h"
 #include "Runtime/MainWindow.h"
@@ -64,10 +65,10 @@ int main() {
 		Application app;
 		app.run();
 
-	} catch(const std::exception& exception) {
+	} catch(std::exception& exception) {
 
-		sf::err() << "Fatal error occured, application will be terminated\n";
-		sf::err() << "what(): \"" << exception.what() << "\"\n";
+		std::cerr << "Fatal error occured, application will be terminated.\n";
+		std::cerr << "what():\n" << exception.what();
 
 	}
 
